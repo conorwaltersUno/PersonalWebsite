@@ -14,6 +14,49 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.result-table {
+  width: 80%;
+  background: #a35742; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a35742,
+    #bd5a53
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #a35742, #bd5a53);
+}
+
+.table-resume {
+  background: #a35742; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a35742,
+    #bd5a53
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #a35742, #bd5a53);
+}
+
+#target {
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  margin-bottom: 150vh;
+  margin-top: 150vh;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  width: 200px;
+}
+
+/* Apply this class when #target enters/leaves the viewport */
+
+#target.target-is-active {
+  opacity: 1;
+  transform: none;
+}
+
 .landing-grid {
   background: #1a1530; /* fallback for old browsers */
   overflow: 'hidden';
@@ -43,13 +86,105 @@
 
 /* Resume Page css */
 .resume-right-col {
-  background: #27221f;
-  color: white;
+  background: #a35742; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #db9d8f,
+    #a35742,
+    #bd5a53
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #db9d8f, #a35742, #bd5a53);
+  color: black;
   padding: 2em;
 }
 
-/* contact page css */
+/* About me page css */
+.splitScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
 
+.centerPane {
+  max-width: 45%;
+  width: 40%;
+  height: 40%;
+  max-height: 40%;
+  min-height: 40%;
+  margin: 20px;
+  margin-left: 500px;
+}
+
+.each-fade {
+  display: flex;
+  width: 75%;
+}
+
+.about-me-text {
+  display: flex;
+  color: white;
+  text-align: left;
+  width: 50%;
+}
+
+.about-me-image-grid {
+  margin-top: 230px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008cba;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.container:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.grid-social-link {
+  height: 100px;
+  width: 100px;
+}
+
+.about-me-title {
+  text-align: center;
+  margin-right: 450px;
+  color: white;
+}
+
+/* contact page css */
 .contact-body {
   margin: auto;
   position: fixed;
@@ -113,13 +248,13 @@
     to right,
     #db9d8f,
     #a35742,
-    #a02118
+    #bd5a53
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     #db9d8f,
     #a35742,
-    #a02118
+    #bd5a53
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.8;
   width: 75%;
@@ -152,8 +287,40 @@
   margin: auto;
 }
 
+.social-links-about-me {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+
+.social-links-about-me i {
+  color: white;
+  font-size: 5em;
+  padding: 100px;
+}
+
 .social-links i {
   color: white;
   font-size: 5em;
-  padding: 8px;
+}
+
+.social-hover {
+  padding-top: 20px;
+  border-radius: 50%;
+}
+
+.social-hover :hover {
+  background: #008cba;
+  border-radius: 50%;
+}
+
+.social-hover-github {
+  padding-top: 20px;
+  border-radius: 50%;
+}
+
+.social-hover-github :hover {
+  background: #000;
+  border-radius: 50%;
 }
