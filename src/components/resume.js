@@ -6,22 +6,22 @@ import Experience from './experience';
 import Skills from './skills';
 import TestResults from './testResults';
 import Radium, { StyleRoot } from 'radium';
-import { rotateInUpLeft, fadeInLeft } from 'react-animations';
+import { fadeInLeft } from 'react-animations';
 import me from '../assets/me.jpg';
 import Slide from 'react-reveal/Slide';
 
 const styles = {
   imageFadeIn: {
     animationDuration: '1s',
-    animationName: Radium.keyframes(rotateInUpLeft, 'rotateInUpLeft'),
+    animationName: Radium.keyframes(fadeInLeft, 'fadeInLeft'),
   },
   leftTextFadeIn: {
-    animationDuration: '1s',
+    animationDuration: '2s',
     animationName: Radium.keyframes(fadeInLeft, 'fadeInLeft'),
   },
   rightcolumnsFadeIn: {
     animationDuration: '3s',
-    animationName: Radium.keyframes(rotateInUpLeft, 'rotateInUpLeft'),
+    animationName: Radium.keyframes(fadeInLeft, 'fadeInLeft'),
   },
 };
 
@@ -43,13 +43,13 @@ const Resume = () => {
             <h4 style={{ color: 'white' }}>Graduate Software Engineer</h4>
             <hr
               style={{
-                borderTop: '3px solid #833fb2',
+                borderTop: '3px solid #64ffda',
                 width: '50%',
                 color: 'white',
               }}
             />
             <p style={{ color: 'white' }}>
-              I am currently studying at Queens University Belfast with the aim
+              I am currently studying at Queen's University Belfast with the aim
               of obtaining a 1st class degree by the summer of 2021.
             </p>
             <p style={{ color: 'white' }}>
@@ -58,7 +58,7 @@ const Resume = () => {
             </p>
             <hr
               style={{
-                borderTop: '3px solid #833fb2',
+                borderTop: '3px solid #64ffda',
                 width: '50%',
                 color: 'white',
               }}
@@ -68,7 +68,9 @@ const Resume = () => {
             <h5 style={{ color: 'white' }}>Phone</h5>
             <p style={{ color: 'white' }}>(+44) 07455 000235</p>
             <h5 style={{ color: 'white' }}>Email</h5>
-            <p style={{ color: 'white' }}>cwalters01@qub.ac.uk</p>
+            <a href='cwalters01@qub.ac.uk' style={{ color: '#64ffda' }}>
+              cwalters01@qub.ac.uk
+            </a>
 
             <h5 style={{ color: 'white' }}>Website</h5>
             <Link to='/' style={{ color: 'white' }}>
@@ -76,7 +78,7 @@ const Resume = () => {
             </Link>
             <hr
               style={{
-                borderTop: '3px solid #833fb2',
+                borderTop: '3px solid #64ffda',
                 width: '50%',
                 color: 'white',
               }}
@@ -85,20 +87,22 @@ const Resume = () => {
         </Cell>
 
         <Cell className='resume-right-col' col={8}>
-          <h2>Education</h2>
+          <div style={styles.leftTextFadeIn}>
+            <hr style={{ borderTop: '3px solid #64ffda' }} />
+            <h2>Education</h2>
+            <Education
+              startYear={2017}
+              endYear={2021}
+              schoolName="Queen's University Belfast"
+              degree='BEng Software Engineering'
+              link='https://www.qub.ac.uk/courses/undergraduate/software-engineering-placement-beng-g604/#course'
+            />
 
-          <Education
-            startYear={2017}
-            endYear={2021}
-            schoolName='Queens University Belfast'
-            degree='BEng Software Engineering'
-            link='https://www.qub.ac.uk/courses/undergraduate/software-engineering-placement-beng-g604/#course'
-          />
-
-          <TestResults title='Module Results'></TestResults>
+            <TestResults title='Module Results'></TestResults>
+          </div>
 
           <Slide left>
-            <hr style={{ borderTop: '3px solid #e22947' }} />
+            <hr style={{ borderTop: '3px solid #64ffda' }} />
 
             <h2>Experience</h2>
 
@@ -113,7 +117,7 @@ const Resume = () => {
           </Slide>
 
           <Slide left>
-            <hr style={{ borderTop: '3px solid #e22947' }} />
+            <hr style={{ borderTop: '3px solid #64ffda' }} />
             <h2>Skills</h2>
             <Skills skill='React' progress={80} />
             <Skills skill='HTML/CSS' progress={80} />

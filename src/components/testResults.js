@@ -7,7 +7,9 @@ class TestResults extends Component {
       <Grid>
         <Cell col={2}></Cell>
         <Cell col={10}>
-          <h5 style={{ marginTop: '0px' }}>{this.props.title}:</h5>
+          <h5 style={{ marginTop: '0px', color: 'white' }}>
+            {this.props.title}:
+          </h5>
           <div style={{ display: 'flex' }}>
             <DataTable
               className='result-table'
@@ -40,7 +42,7 @@ class TestResults extends Component {
                   result: 81 + '%',
                 },
                 {
-                  module: 'Professional Computing Practise',
+                  module: 'Professional Computing Practice',
                   year: 2,
                   result: 78 + '%',
                 },
@@ -96,14 +98,14 @@ class TestResults extends Component {
                 },
               ]}
             >
-              <TableHeader name='module' style={{ color: 'black' }}>
+              <TableHeader name='module' style={{ color: 'white' }}>
                 Module
               </TableHeader>
               <TableHeader
                 numeric
                 sortable
                 name='year'
-                style={{ color: 'black' }}
+                style={{ color: 'white' }}
               >
                 Year
               </TableHeader>
@@ -111,7 +113,7 @@ class TestResults extends Component {
                 numeric
                 sortable
                 name='result'
-                style={{ color: 'black' }}
+                style={{ color: 'white' }}
               >
                 Result
               </TableHeader>

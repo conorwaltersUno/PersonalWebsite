@@ -16,23 +16,24 @@
 
 .result-table {
   width: 80%;
-  background: #a35742; /* fallback for old browsers */
+  background: #161531; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #a35742,
-    #bd5a53
+    #161531,
+    #161531
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #a35742, #bd5a53);
+  background: linear-gradient(to right, #161531, #161531);
+  border-radius: 5px;
 }
 
 .table-resume {
-  background: #a35742; /* fallback for old browsers */
+  background: #161531; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #a35742,
-    #bd5a53
+    #161531,
+    #161531
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #a35742, #bd5a53);
+  background: linear-gradient(to right, #161531, #161531);
 }
 
 #target {
@@ -80,21 +81,28 @@
   height: 100%;
 }
 
+.hi-text-landing-page {
+}
+
+/* Projects Page */
 .projects-grid {
   display: flex;
+  flex-wrap: wrap;
 }
 
 /* Resume Page css */
 .resume-right-col {
-  background: #a35742; /* fallback for old browsers */
+  background: #112240; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #db9d8f,
-    #a35742,
-    #bd5a53
+    #161531,
+    #161531,
+    #161531
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #db9d8f, #a35742, #bd5a53);
-  color: black;
+  background: linear-gradient(to right, #161531, #161531, #161531);
+  margin: auto;
+  border-radius: 5px;
+  color: white;
   padding: 2em;
 }
 
@@ -119,7 +127,12 @@
 
 .each-fade {
   display: flex;
-  width: 75%;
+  width: 100%;
+}
+
+.each-fade-test {
+  display: flex;
+  width: 100%;
 }
 
 .about-me-text {
@@ -243,48 +256,48 @@
 }
 
 .banner-text {
-  background: #833ab4; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #db9d8f,
-    #a35742,
-    #bd5a53
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #db9d8f,
-    #a35742,
-    #bd5a53
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.8;
   width: 75%;
   margin: auto;
   border-radius: 10px;
+  margin-top: 150px;
 }
 
 .banner-text h1 {
   font-size: 66px;
   font-weight: bold;
-  color: white;
+  margin-right: 370px;
+  color: #ccd6f6;
 }
 
-.banner-text hr {
-  border-top: 5px dotted white;
-  width: 50%;
-  margin: auto;
+.banner-text h2 {
+  font-size: 66px;
+  font-weight: bold;
+  color: #8892b0;
+  margin-right: 10px;
+}
+
+.banner-text h5 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #64ffda;
+  margin-right: 700px;
 }
 
 .banner-text p {
-  color: white;
+  color: #65708c;
   font-size: 20px;
   padding: 1em;
+  margin-right: 50px;
 }
 
 .social-links {
   display: flex;
   justify-content: space-between;
+  text-align: left;
   width: 50%;
   margin: auto;
+  opacity: 0.4;
 }
 
 .social-links-about-me {

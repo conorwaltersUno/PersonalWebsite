@@ -13,7 +13,7 @@ const styles = {
     animationName: Radium.keyframes(fadeInLeftBig, 'fadeInLeftBig'),
   },
   rightSideAnimation: {
-    animationDuration: '3s',
+    animationDuration: '2s',
     animationName: Radium.keyframes(fadeInLeftBig, 'fadeInLeftBig'),
   },
 };

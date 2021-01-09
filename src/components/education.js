@@ -14,7 +14,7 @@ class Education extends Component {
           <h3 style={{ marginTop: '0px' }}>{this.props.schoolName}</h3>
           <h4 style={{ marginTop: '0px' }}>{this.props.degree}</h4>
           <a
-            style={{ marginTop: '0px', color: 'black' }}
+            style={{ marginTop: '0px', color: '#64ffda' }}
             href={this.props.link}
           >
             Link to course website

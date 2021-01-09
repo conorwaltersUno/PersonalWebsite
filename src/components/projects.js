@@ -1,6 +1,26 @@
 import React, { Component } from 'react';
-import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton } from 'react-mdl';
+import {
+  Tabs,
+  Tab,
+  Grid,
+  Cell,
+  Card,
+  CardTitle,
+  CardText,
+  CardMenu,
+} from 'react-mdl';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LaunchIcon from '@material-ui/icons/Launch';
+import Radium, { StyleRoot } from 'radium';
+import { fadeInLeftBig } from 'react-animations';
+import Slide from 'react-reveal/Slide';
 
+const styles = {
+  leftSideAnimation: {
+    animationDuration: '1s',
+    animationName: Radium.keyframes(fadeInLeftBig, 'fadeInLeftBig'),
+  },
+};
 
 class Projects extends Component {
   constructor(props) {
@@ -8,100 +28,326 @@ class Projects extends Component {
     this.state = { activeTab: 0 };
   }
 
+  toggleRaised = () =>
+    this.setState({
+      activeTab: this.state.activeTab,
+    });
+
   toggleCategories() {
-
-    if(this.state.activeTab === 0){
-      return(
-        <div className="projects-grid">
-          {/* Project 1 */}
-          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-            <CardTitle style={{color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover'}} >React Project #1</CardTitle>
-            <CardText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            </CardText>
-            <CardActions border>
-              <Button colored>GitHub</Button>
-              <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button>
-            </CardActions>
-            <CardMenu style={{color: '#fff'}}>
-              <IconButton name="share" />
-            </CardMenu>
-          </Card>
-
-          {/* Project 2 */}
-          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-            <CardTitle style={{color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover'}} >React Project #2</CardTitle>
-            <CardText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            </CardText>
-            <CardActions border>
-              <Button colored>GitHub</Button>
-              <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button>
-            </CardActions>
-            <CardMenu style={{color: '#fff'}}>
-              <IconButton name="share" />
-            </CardMenu>
-          </Card>
-
-          {/* Project 3 */}
-          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-            <CardTitle style={{color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover'}} >React Project #3</CardTitle>
-            <CardText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            </CardText>
-            <CardActions border>
-              <Button colored>GitHub</Button>
-              <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button>
-            </CardActions>
-            <CardMenu style={{color: '#fff'}}>
-              <IconButton name="share" />
-            </CardMenu>
-          </Card>
-        </div>
-
-
-      )
-    } else if(this.state.activeTab === 1) {
+    if (this.state.activeTab === 0) {
       return (
-        <div><h1>This is Angular</h1></div>
-      )
-    } else if(this.state.activeTab === 2) {
+        <StyleRoot>
+          <div className='projects-grid' style={styles.leftSideAnimation}>
+            {/* Project 1 */}
+
+            <Card
+              shadow={5}
+              style={{
+                minWidth: '450',
+                margin: 'auto',
+                borderRadius: 5,
+                background: '#112240',
+                marginLeft: 409,
+                height: 320,
+                maxHeight: 320,
+              }}
+            >
+              <CardTitle
+                style={{
+                  color: '#e6f1ff',
+                  height: '140px',
+                }}
+              >
+                Personal Website v1
+              </CardTitle>
+              <CardText
+                style={{
+                  color: '#ccd6f6',
+                }}
+              >
+                This is a website I have created using react, it will be used as
+                my cv when applying for graduate jobs. It was a super fun
+                weekend project :D
+              </CardText>
+              <CardText
+                style={{
+                  color: '#8892b0',
+                }}
+              >
+                <p>Node, React, Github, Firebase </p>
+              </CardText>
+
+              <CardMenu style={{ color: '#FFFFFF' }}>
+                <a href='wwww.conorwalters.com'>
+                  <LaunchIcon style={{ marginRight: 10 }} />
+                </a>
+                <a href='https://github.com/Cheesiewalters/PersonalWebsite'>
+                  <GitHubIcon />
+                </a>
+              </CardMenu>
+            </Card>
+
+            {/* Project 2 */}
+            <Card
+              shadow={5}
+              style={{
+                minWidth: '450',
+                margin: 'auto',
+                borderRadius: 5,
+                background: '#112240',
+                height: 320,
+                maxHeight: 320,
+              }}
+            >
+              <CardTitle
+                style={{
+                  color: '#e6f1ff',
+                  height: '140px',
+                }}
+              >
+                Hireland
+              </CardTitle>
+              <CardText
+                style={{
+                  color: '#ccd6f6',
+                }}
+              >
+                This website was creatde for my final year university project,
+                it is a platform aimed to bring trades-persons and customers
+                together through an online platform
+              </CardText>
+              <CardText
+                style={{
+                  color: '#8892b0',
+                }}
+              >
+                <p>Node, React, Github, Firebase </p>
+              </CardText>
+
+              <CardMenu style={{ color: '#FFFFFF' }}>
+                <a href='https://github.com/Cheesiewalters/Hireland'>
+                  <GitHubIcon />
+                </a>
+              </CardMenu>
+            </Card>
+
+            {/* Project 3 */}
+            <Card
+              shadow={5}
+              style={{
+                minWidth: '450',
+                margin: 'auto',
+                borderRadius: 5,
+                background: '#112240',
+                marginRight: 450,
+                height: 320,
+                maxHeight: 320,
+              }}
+            >
+              <CardTitle
+                style={{
+                  color: '#e6f1ff',
+                  height: '140px',
+                }}
+              >
+                Project 3
+              </CardTitle>
+              <CardText
+                style={{
+                  color: '#ccd6f6',
+                }}
+              >
+                I will be completing this project to make this page look nice
+                and to get more experienced with react. I hope to use the
+                spotify api to create this website
+              </CardText>
+              <CardText
+                style={{
+                  color: '#8892b0',
+                }}
+              >
+                <p>Node, React, Github, Firebase </p>
+              </CardText>
+
+              <CardMenu style={{ color: '#FFFFFF' }}>
+                <a href='https://github.com/Cheesiewalters/PersonalWebsite'>
+                  <GitHubIcon href='https://github.com/Cheesiewalters/PersonalWebsite' />
+                </a>
+              </CardMenu>
+            </Card>
+          </div>
+        </StyleRoot>
+      );
+    } else if (this.state.activeTab === 1) {
       return (
-        <div><h1>This is VueJS</h1></div>
-      )
-    } else if(this.state.activeTab === 3) {
-      return (
-        <div><h1>This is MongoDB</h1></div>
-      )
+        <StyleRoot>
+          <Slide left>
+            <div className='projects-grid' style={styles.leftSideAnimation}>
+              {/* Project 1 */}
+
+              <Card
+                shadow={5}
+                style={{
+                  minWidth: '450',
+                  margin: 'auto',
+                  borderRadius: 5,
+                  background: '#112240',
+                  marginLeft: 409,
+                  height: 320,
+                  maxHeight: 320,
+                }}
+              >
+                <CardTitle
+                  style={{
+                    color: '#e6f1ff',
+                    height: '140px',
+                  }}
+                >
+                  SpaceShooterPro
+                </CardTitle>
+                <CardText
+                  style={{
+                    color: '#ccd6f6',
+                  }}
+                >
+                  This is a small game designed and built in unity, It is a
+                  small shooter game where a spaceship follows a set path in a
+                  2d world and enemy spaceships must be shot down to win
+                </CardText>
+                <CardText
+                  style={{
+                    color: '#8892b0',
+                  }}
+                >
+                  <p>unity, c# </p>
+                </CardText>
+
+                <CardMenu style={{ color: '#FFFFFF' }}>
+                  <a href='wwww.conorwalters.com'>
+                    <LaunchIcon style={{ marginRight: 10 }} />
+                  </a>
+                  <a href='https://github.com/Cheesiewalters/PersonalWebsite'>
+                    <GitHubIcon />
+                  </a>
+                </CardMenu>
+              </Card>
+
+              {/* Project 2 */}
+
+              <Card
+                shadow={5}
+                style={{
+                  minWidth: '450',
+                  margin: 'auto',
+                  borderRadius: 5,
+                  background: '#112240',
+                  height: 320,
+                  maxHeight: 320,
+                }}
+              >
+                <CardTitle
+                  style={{
+                    color: '#e6f1ff',
+                    height: '140px',
+                  }}
+                >
+                  Hireland
+                </CardTitle>
+                <CardText
+                  style={{
+                    color: '#ccd6f6',
+                  }}
+                >
+                  This website was creatde for my final year university project,
+                  it is a platform aimed to bring trades-persons and customers
+                  together through an online platform
+                </CardText>
+                <CardText
+                  style={{
+                    color: '#8892b0',
+                  }}
+                >
+                  <p>Node, React, Github, Firebase </p>
+                </CardText>
+
+                <CardMenu style={{ color: '#FFFFFF' }}>
+                  <a href='https://github.com/Cheesiewalters/Hireland'>
+                    <GitHubIcon />
+                  </a>
+                </CardMenu>
+              </Card>
+
+              {/* Project 3 */}
+
+              <Card
+                shadow={5}
+                style={{
+                  minWidth: '450',
+                  margin: 'auto',
+                  borderRadius: 5,
+                  background: '#112240',
+                  marginRight: 450,
+                  height: 320,
+                  maxHeight: 320,
+                }}
+              >
+                <CardTitle
+                  style={{
+                    color: '#e6f1ff',
+                    height: '140px',
+                  }}
+                >
+                  Project 3
+                </CardTitle>
+                <CardText
+                  style={{
+                    color: '#ccd6f6',
+                  }}
+                >
+                  I will be completing this project to make this page look nice
+                  and to get more experienced with react. I hope to use the
+                  spotify api to create this website
+                </CardText>
+                <CardText
+                  style={{
+                    color: '#8892b0',
+                  }}
+                >
+                  <p>Node, React, Github, Firebase </p>
+                </CardText>
+
+                <CardMenu style={{ color: '#FFFFFF' }}>
+                  <a href='https://github.com/Cheesiewalters/PersonalWebsite'>
+                    <GitHubIcon href='https://github.com/Cheesiewalters/PersonalWebsite' />
+                  </a>
+                </CardMenu>
+              </Card>
+            </div>
+          </Slide>
+        </StyleRoot>
+      );
     }
-
   }
 
-
-
   render() {
-    return(
+    return (
       <div>
-        <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
-          <Tab>React</Tab>
-          <Tab>Angular</Tab>
-          <Tab>VueJS</Tab>
-          <Tab>MongoDB</Tab>
+        <Tabs
+          activeTab={this.state.activeTab}
+          onChange={(tabId) => this.setState({ activeTab: tabId })}
+          ripple
+        >
+          <Tab style={{ color: '#ffffff' }}>React</Tab>
+          <Tab style={{ color: '#ffffff' }}>Unity</Tab>
         </Tabs>
 
-
-          <Grid>
-            <Cell col={12}>
-              <div className="content">{this.toggleCategories()}</div>
-            </Cell>
-          </Grid>
-
-
+        <Grid>
+          <Cell col={12}>
+            <div className='content'>{this.toggleCategories()}</div>
+          </Cell>
+        </Grid>
       </div>
-    )
+    );
   }
 }
 

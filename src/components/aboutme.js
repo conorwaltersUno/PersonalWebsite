@@ -2,11 +2,26 @@ import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import me from '../assets/me.jpg';
+import boat1 from '../assets/boat_1.jpg';
+import boat2 from '../assets/boat_2.jpg';
+import volunteering_2 from '../assets/volunteering_2.jpg';
+import volunteering_1 from '../assets/volunteering_1.jpg';
+import keyboard from '../assets/keyboard_and_coffee.jpg';
+import adventure from '../assets/adventure.jpg';
+
 import Grid from '@material-ui/core/Grid';
-import { StyleRoot } from 'radium';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Slide from 'react-reveal/Slide';
+import Radium, { StyleRoot } from 'radium';
+import { fadeInLeftBig } from 'react-animations';
+
+const styles = {
+  leftSideAnimation: {
+    animationDuration: '3s',
+    animationName: Radium.keyframes(fadeInLeftBig, 'fadeInLeftBig'),
+  },
+};
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -20,7 +35,7 @@ const About = () => {
   return (
     <StyleRoot>
       <div className='splitScreen'>
-        <div className='centerPane'>
+        <div className='centerPane' style={styles.leftSideAnimation}>
           <Fade>
             <div className='each-fade'>
               <div>
@@ -29,22 +44,23 @@ const About = () => {
             </div>
             <div className='each-fade'>
               <div>
-                <img src={me} alt='Avatar' className='avatar' />
+                <img src={boat1} alt='Avatar' className='avatar' />
               </div>
             </div>
-            <div className='each-fade'>
+            <div className='each-fade-test'>
               <div>
-                <img src={me} alt='Avatar' className='avatar' />
+                <img src={boat2} alt='Avatar' className='avatar' />
               </div>
             </div>
           </Fade>
           <h3 className='about-me-title'>Who am I?</h3>
           <div className='about-me-text'>
             <h4>
-              I'm a full stack developer that enjoys using MERN stack but also
-              has experience using angular and c# for backend development. I
-              enjoy breaking down problems and using my solutions too create web
-              apps that are both functional and easy to use.
+              I'm a software engineer that enjoys using MERN stack but also has
+              experience using angular and c# for backend development to build
+              creative websites. I enjoy breaking down problems and using my
+              solutions to create web apps that are both functional and easy to
+              use.
             </h4>
           </div>
           <div className='about-me-text'>
@@ -58,77 +74,57 @@ const About = () => {
           <Slide left>
             <div className='about-me-text' data-reveal-delay='150'>
               <h4>
-                I am studious but also take part in many activities in my spare
-                time. I have sailed at events all over ireland at events
-                representing both my local sailing club and Queens University. I
-                regularly mountain bike and skateboard if I can't make it out
-                onto the water.
+                If i'm not studying or writing code you can find me training or
+                competiting in sailing events all over Ireland for my
+                university. I am vice captain of Queens Sailing club and have
+                been involved in sailing all my life.
               </h4>
             </div>
           </Slide>
         </div>
+
         <Slide left>
+          <div>
+            <hr style={{ borderTop: '3px solid #64ffda' }} />
+          </div>
           <Grid
             container
             spacing={3}
             style={{ paddingLeft: 70, paddingRight: 70 }}
           >
-            <Grid item xs={2}>
+            <Grid item xs={3}>
               <Paper className={classes.paper}>
                 <div className='container'>
-                  <img src={me} alt='Avatar' className='image' />
+                  <img src={volunteering_1} alt='Avatar' className='image' />
                   <div className='overlay'>
-                    <div className='text'>Hello World</div>
+                    <div className='text'>Volunteering in Cambodia!</div>
                   </div>
                 </div>
               </Paper>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={3}>
               <Paper className={classes.paper}>
                 <div className='container'>
-                  <img src={me} alt='Avatar' className='image' />
+                  <img src={keyboard} alt='Avatar' className='image' />
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>
+                <div className='container'>
+                  <img src={volunteering_2} alt='Avatar' className='image' />
                   <div className='overlay'>
-                    <div className='text'>Hello World</div>
+                    <div className='text'>Volunteering in Cambodia!</div>
                   </div>
                 </div>
               </Paper>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={3}>
               <Paper className={classes.paper}>
                 <div className='container'>
-                  <img src={me} alt='Avatar' className='image' />
+                  <img src={adventure} alt='Avatar' className='image' />
                   <div className='overlay'>
-                    <div className='text'>Hello World</div>
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={2}>
-              <Paper className={classes.paper}>
-                <div className='container'>
-                  <img src={me} alt='Avatar' className='image' />
-                  <div className='overlay'>
-                    <div className='text'>Hello World</div>
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={2}>
-              <Paper className={classes.paper}>
-                <div className='container'>
-                  <img src={me} alt='Avatar' className='image' />
-                  <div className='overlay'>
-                    <div className='text'>Hello World</div>
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={2}>
-              <Paper className={classes.paper}>
-                <div className='container'>
-                  <img src={me} alt='Avatar' className='image' />
-                  <div className='overlay'>
-                    <div className='text'>Hello World</div>
+                    <div className='text'>Always up for an adventure!</div>
                   </div>
                 </div>
               </Paper>

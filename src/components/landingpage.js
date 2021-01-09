@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Grid, Cell } from 'react-mdl';
 import Radium, { StyleRoot } from 'radium';
 import { headShake, fadeInLeftBig } from 'react-animations';
-import me from '../assets/me.jpg';
 
 const styles = {
   bannerFadeIn: {
@@ -31,16 +30,18 @@ class Landing extends Component {
           <Grid className='landing-grid'>
             <Cell col={12}>
               <div className='avatar-toolbar-splitter'></div>
-              <img
+              {/* <img
                 style={styles.imageFadeIn}
                 src={me}
                 alt='Avatar'
                 className='avatar'
-              />
+              /> */}
 
               <div className='banner-text' style={styles.bannerFadeIn}>
-                <h1 style={styles.textFadeIn}>Full Stack Web Developer</h1>
-                <hr />
+                <h5 style={styles.textFadeIn}>Hi, i'm </h5>
+                <h1 style={styles.textFadeIn}>Conor Walters.</h1>
+                <h2 style={styles.textFadeIn}>Full Stack Web Developer</h2>
+
                 <p style={styles.textFadeIn}>
                   HTML/CSS | JavaScript | React | React Native | NodeJS |
                   Express | MongoDB | SQL
@@ -53,7 +54,10 @@ class Landing extends Component {
                     rel='noopener noreferrer'
                     target='_blank'
                   >
-                    <i className='fa fa-linkedin-square' aria-hidden='true' />
+                    <i
+                      className='fa fa-linkedin-square tex-black'
+                      aria-hidden='true'
+                    />
                   </a>
 
                   {/* Github */}

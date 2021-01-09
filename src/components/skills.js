@@ -10,7 +10,7 @@ class Skills extends Component {
         </Cell>
         <Cell col={11}>
           <ProgressBar
-            style={{ margin: 'auto', width: '75%' }}
+            style={{ margin: 'auto', width: '75%', color: '#64ffda' }}
             progress={this.props.progress}
           />
         </Cell>
