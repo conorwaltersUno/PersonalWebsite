@@ -6,7 +6,7 @@ import boat1 from '../assets/boat_1.jpg';
 import boat2 from '../assets/boat_2.jpg';
 import volunteering_2 from '../assets/volunteering_2.jpg';
 import volunteering_1 from '../assets/volunteering_1.jpg';
-import keyboard from '../assets/keyboard_and_coffee.jpg';
+import boat_3 from '../assets/boat_3.jpg';
 import adventure from '../assets/adventure.jpg';
 
 import Grid from '@material-ui/core/Grid';
@@ -105,7 +105,7 @@ const About = () => {
             <Grid item xs={3}>
               <Paper className={classes.paper}>
                 <div className='container'>
-                  <img src={keyboard} alt='Avatar' className='image' />
+                  <img src={boat_3} alt='Avatar' className='image' />
                 </div>
               </Paper>
             </Grid>
@@ -124,7 +124,7 @@ const About = () => {
                 <div className='container'>
                   <img src={adventure} alt='Avatar' className='image' />
                   <div className='overlay'>
-                    <div className='text'>Always up for an adventure!</div>
+                    <div className='text'>Sailing with my twin brother!</div>
                   </div>
                 </div>
               </Paper>
