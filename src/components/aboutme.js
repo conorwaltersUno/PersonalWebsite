@@ -3,7 +3,6 @@ import 'react-slideshow-image/dist/styles.css';
 import boat1 from '../assets/boat_1.jpg';
 import qub_sailing from '../assets/qub_sailing.jpg';
 import adventure from '../assets/adventure.jpg';
-import { makeStyles } from '@material-ui/core/styles';
 import Slide from 'react-reveal/Slide';
 import Radium, { StyleRoot } from 'radium';
 import { fadeInLeftBig } from 'react-animations';
