@@ -148,6 +148,11 @@
   height: 300px;
 }
 
+.slider-image-about-me {
+  margin-right: 37%;
+  margin-left: -17%;
+}
+
 .image {
   display: block;
   width: 100%;
@@ -190,6 +195,7 @@
 }
 
 .about-me-title {
+  padding-top: 5%;
   text-align: center;
   margin-right: 77%;
   color: #64ffda;
@@ -264,7 +270,7 @@
 .banner-text h1 {
   font-size: 66px;
   font-weight: bold;
-  margin-right: 370px;
+  margin-right: 26.5%;
   color: #ccd6f6;
 }
 
@@ -272,21 +278,19 @@
   font-size: 66px;
   font-weight: bold;
   color: #8892b0;
-  margin-right: 10px;
 }
 
 .banner-text h5 {
   font-size: 32px;
   font-weight: bold;
   color: #64ffda;
-  margin-right: 700px;
+  margin-right: 50%;
 }
 
 .banner-text p {
   color: #65708c;
   font-size: 20px;
   padding: 1em;
-  margin-right: 50px;
 }
 
 .social-links {

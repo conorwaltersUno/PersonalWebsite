@@ -12,6 +12,7 @@
     "radium": "^0.26.1",
     "react": "^16.14.0",
     "react-animations": "^1.0.0",
+    "react-awesome-slider": "^4.1.0",
     "react-dom": "^16.14.0",
     "react-mdl": "^1.11.0",
     "react-reveal": "^1.2.2",

@@ -12,7 +12,7 @@ import Slide from 'react-reveal/Slide';
 
 const styles = {
   imageFadeIn: {
-    animationDuration: '1s',
+    animationDuration: '2s',
     animationName: Radium.keyframes(fadeInLeft, 'fadeInLeft'),
   },
   leftTextFadeIn: {
@@ -111,7 +111,7 @@ const Resume = () => {
               endYear={'July ' + 2020}
               jobName='Associate Software Engineer'
               company='Philips'
-              jobDescription='Working at Philips has provided me with great experience and exposure to the software industry, I spent most of my placement year working on front end web development using Angular and React and contributing to the development of the Xplore product. I worked extensively with c# in to help develop the Xplore products backend and gained a great insight into what working within the software industry is like.
+              jobDescription='Working at Philips has provided me with great experience and exposure to the software industry, I spent most of my placement year working on front end web development using Angular and React and contributing to the development of the Xplore product. I worked extensively with c# in to help develop the Xplore products backend api and gained a great insight into what working within the software industry is like. I also gained hands on experience using Docker to host Sql databases images and used Jenkins for Continous Integration with Github.
               '
             />
           </Slide>

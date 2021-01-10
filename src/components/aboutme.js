@@ -1,20 +1,14 @@
 import React from 'react';
-import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-import me from '../assets/me.jpg';
 import boat1 from '../assets/boat_1.jpg';
-import boat2 from '../assets/boat_2.jpg';
-import volunteering_2 from '../assets/volunteering_2.jpg';
-import volunteering_1 from '../assets/volunteering_1.jpg';
-import boat_3 from '../assets/boat_3.jpg';
+import qub_sailing from '../assets/qub_sailing.jpg';
 import adventure from '../assets/adventure.jpg';
-
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Slide from 'react-reveal/Slide';
 import Radium, { StyleRoot } from 'radium';
 import { fadeInLeftBig } from 'react-animations';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 const styles = {
   leftSideAnimation: {
@@ -23,36 +17,18 @@ const styles = {
   },
 };
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: theme.spacing(2),
-    color: theme.palette.text.secondary,
-  },
-}));
-
 const About = () => {
-  const classes = useStyles();
   return (
     <StyleRoot>
       <div className='splitScreen'>
         <div className='centerPane' style={styles.leftSideAnimation}>
-          <Fade>
-            <div className='each-fade'>
-              <div>
-                <img src={me} alt='Avatar' className='avatar' />
-              </div>
-            </div>
-            <div className='each-fade'>
-              <div>
-                <img src={boat1} alt='Avatar' className='avatar' />
-              </div>
-            </div>
-            <div className='each-fade-test'>
-              <div>
-                <img src={boat2} alt='Avatar' className='avatar' />
-              </div>
-            </div>
-          </Fade>
+          <div className='slider-image-about-me'>
+            <AwesomeSlider>
+              <div data-src={boat1} style={{ borderRadius: 5 }} />
+              <div data-src={adventure} style={{ borderRadius: 5 }} />
+              <div data-src={qub_sailing} style={{ borderRadius: 5 }} />
+            </AwesomeSlider>
+          </div>
           <h3 className='about-me-title'>Who am I?</h3>
           <div className='about-me-text'>
             <h4>
@@ -83,54 +59,6 @@ const About = () => {
           </Slide>
         </div>
 
-        <Slide left>
-          <div>
-            <hr style={{ borderTop: '3px solid #64ffda' }} />
-          </div>
-          <Grid
-            container
-            spacing={3}
-            style={{ paddingLeft: 70, paddingRight: 70 }}
-          >
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>
-                <div className='container'>
-                  <img src={volunteering_1} alt='Avatar' className='image' />
-                  <div className='overlay'>
-                    <div className='text'>Volunteering in Cambodia!</div>
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>
-                <div className='container'>
-                  <img src={boat_3} alt='Avatar' className='image' />
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>
-                <div className='container'>
-                  <img src={volunteering_2} alt='Avatar' className='image' />
-                  <div className='overlay'>
-                    <div className='text'>Volunteering in Cambodia!</div>
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>
-                <div className='container'>
-                  <img src={adventure} alt='Avatar' className='image' />
-                  <div className='overlay'>
-                    <div className='text'>Sailing with my twin brother!</div>
-                  </div>
-                </div>
-              </Paper>
-            </Grid>
-          </Grid>
-        </Slide>
         <Slide left>
           <div className='social-links-about-me'>
             {/* LinkedIn */}

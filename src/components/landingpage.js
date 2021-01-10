@@ -30,21 +30,14 @@ class Landing extends Component {
           <Grid className='landing-grid'>
             <Cell col={12}>
               <div className='avatar-toolbar-splitter'></div>
-              {/* <img
-                style={styles.imageFadeIn}
-                src={me}
-                alt='Avatar'
-                className='avatar'
-              /> */}
-
               <div className='banner-text' style={styles.bannerFadeIn}>
                 <h5 style={styles.textFadeIn}>Hi, i'm </h5>
                 <h1 style={styles.textFadeIn}>Conor Walters.</h1>
-                <h2 style={styles.textFadeIn}>Full Stack Web Developer</h2>
+                <h2 style={styles.textFadeIn}>Full Stack Web Developer.</h2>
 
                 <p style={styles.textFadeIn}>
                   HTML/CSS | JavaScript | React | React Native | NodeJS |
-                  Express | MongoDB | SQL
+                  ExpressJS | MongoDB | SQL
                 </p>
 
                 <div className='social-links' style={styles.imageFadeIn}>
