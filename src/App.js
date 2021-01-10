@@ -27,7 +27,14 @@ function App() {
             className='header-color'
             title={
               <div style={styles.leftSideAnimation}>
-                <Link style={{ textDecoration: 'none', color: 'white' }} to='/'>
+                <Link
+                  style={{
+                    textDecoration: 'none',
+                    color: 'white',
+                    marginLeft: '-57px',
+                  }}
+                  to='/'
+                >
                   My Portfolio
                 </Link>
               </div>
@@ -42,19 +49,6 @@ function App() {
               </Navigation>
             </div>
           </Header>
-          <Drawer
-            title={
-              <Link style={{ textDecoration: 'none', color: 'black' }} to='/'>
-                MyPortfolio
-              </Link>
-            }
-          >
-            <Navigation>
-              <Link to='/resume'>Resume</Link>
-              <Link to='/aboutme'>About Me</Link>
-              <Link to='/projects'>Projects</Link>
-            </Navigation>
-          </Drawer>
           <Content>
             <div className='page-content' />
             <Main />
