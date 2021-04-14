@@ -13,7 +13,6 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LaunchIcon from '@material-ui/icons/Launch';
 import Radium, { StyleRoot } from 'radium';
 import { fadeInLeftBig } from 'react-animations';
-import Slide from 'react-reveal/Slide';
 
 const styles = {
   leftSideAnimation: {
@@ -47,7 +46,6 @@ class Projects extends Component {
                 marginLeft: '25%',
                 borderRadius: 5,
                 background: '#112240',
-                marginLeft: 409,
                 height: 320,
                 maxHeight: 320,
               }}
