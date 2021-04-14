@@ -68,7 +68,7 @@ const Resume = () => {
               5 Scaddy Road, Downpatrick, BT30 9BW
             </p>
             <h5 style={{ color: 'white' }}>Phone</h5>
-            <p style={{ color: 'white' }}>(+44) 7455 000235</p>
+            <p style={{ color: 'white' }}>(+44) 7455 000235 </p>
             <h5 style={{ color: 'white' }}>Email</h5>
             <a href='cwalters01@qub.ac.uk' style={{ color: '#64ffda' }}>
               cwalters01@qub.ac.uk
