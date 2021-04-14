@@ -31,7 +31,7 @@ class Landing extends Component {
             <Cell col={12}>
               <div className='avatar-toolbar-splitter'></div>
               <div className='banner-text' style={styles.bannerFadeIn}>
-                <h5 style={styles.textFadeIn}>Hi, i'm </h5>
+                <h5 style={styles.textFadeIn}>Hi, I am </h5>
                 <h1 style={styles.textFadeIn}>Conor Walters.</h1>
                 <h2 style={styles.textFadeIn}>Full Stack Web Developer.</h2>
 
@@ -60,15 +60,6 @@ class Landing extends Component {
                     target='_blank'
                   >
                     <i className='fa fa-github-square' aria-hidden='true' />
-                  </a>
-
-                  {/* Facebook */}
-                  <a
-                    href='https://www.facebook.com/conor.walters.16/'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    <i className='fa fa-facebook-f' aria-hidden='true' />
                   </a>
                 </div>
               </div>

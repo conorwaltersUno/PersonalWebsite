@@ -44,7 +44,7 @@ function App() {
             <div style={styles.rightSideAnimation}>
               <Navigation>
                 <Link to='/resume'>Resume</Link>
-                <Link to='/aboutme'>About Me</Link>
+
                 <Link to='/projects'>Projects</Link>
               </Navigation>
             </div>

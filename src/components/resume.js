@@ -64,9 +64,11 @@ const Resume = () => {
               }}
             />
             <h5 style={{ color: 'white' }}>Address</h5>
-            <p style={{ color: 'white' }}>5 Balfour Avenue, Belfast, BT7 2EU</p>
+            <p style={{ color: 'white' }}>
+              5 Scaddy Road, Downpatrick, BT30 9BW
+            </p>
             <h5 style={{ color: 'white' }}>Phone</h5>
-            <p style={{ color: 'white' }}>(+44) 07455 000235</p>
+            <p style={{ color: 'white' }}>(+44) 7455 000235</p>
             <h5 style={{ color: 'white' }}>Email</h5>
             <a href='cwalters01@qub.ac.uk' style={{ color: '#64ffda' }}>
               cwalters01@qub.ac.uk
@@ -124,14 +126,13 @@ const Resume = () => {
             <Skills skill='Windows 7/8/9/10' progress={80} />
             <Skills skill='Postman' progress={80} />
             <Skills skill='NodeJS' progress={70} />
+            <Skills skill='ExpressJS' progress={70} />
             <Skills skill='Github' progress={70} />
             <Skills skill='Javascript ES6' progress={60} />
-            <Skills skill='C#' progress={60} />
+            <Skills skill='C#' progress={50} />
             <Skills skill='Mac OS' progress={50} />
-            <Skills skill='C++' progress={50} />
             <Skills skill='Jenkins (CI/CD)' progress={40} />
             <Skills skill='Docker' progress={40} />
-            <Skills skill='Python 3.9' progress={40} />
           </Slide>
         </Cell>
       </Grid>

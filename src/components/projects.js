@@ -44,7 +44,7 @@ class Projects extends Component {
               shadow={5}
               style={{
                 minWidth: '450',
-                margin: 'auto',
+                marginLeft: '25%',
                 borderRadius: 5,
                 background: '#112240',
                 marginLeft: 409,
@@ -112,16 +112,17 @@ class Projects extends Component {
                   color: '#ccd6f6',
                 }}
               >
-                This website was creatde for my final year university project,
+                This website was created for my final year university project,
                 it is a platform aimed to bring trades-persons and customers
-                together through an online platform
+                together through an online platform where traders bid on
+                tickets.
               </CardText>
               <CardText
                 style={{
                   color: '#8892b0',
                 }}
               >
-                <p>Node, React, Github, Firebase </p>
+                <p>Node, React, Github </p>
               </CardText>
 
               <CardMenu style={{ color: '#FFFFFF' }}>
@@ -130,202 +131,10 @@ class Projects extends Component {
                 </a>
               </CardMenu>
             </Card>
-
-            {/* Project 3 */}
-            <Card
-              shadow={5}
-              style={{
-                minWidth: '450',
-                margin: 'auto',
-                borderRadius: 5,
-                background: '#112240',
-                marginRight: 450,
-                height: 320,
-                maxHeight: 320,
-              }}
-            >
-              <CardTitle
-                style={{
-                  color: '#e6f1ff',
-                  height: '140px',
-                }}
-              >
-                Project 3
-              </CardTitle>
-              <CardText
-                style={{
-                  color: '#ccd6f6',
-                }}
-              >
-                I will be completing this project to make this page look nice
-                and to get more experienced with react. I hope to use the
-                spotify api to create this website
-              </CardText>
-              <CardText
-                style={{
-                  color: '#8892b0',
-                }}
-              >
-                <p>Node, React, Github, Firebase </p>
-              </CardText>
-
-              <CardMenu style={{ color: '#FFFFFF' }}>
-                <a href='https://github.com/Cheesiewalters/PersonalWebsite'>
-                  <GitHubIcon href='https://github.com/Cheesiewalters/PersonalWebsite' />
-                </a>
-              </CardMenu>
-            </Card>
           </div>
         </StyleRoot>
       );
-    } else if (this.state.activeTab === 1) {
-      return (
-        <StyleRoot>
-          <Slide left>
-            <div className='projects-grid' style={styles.leftSideAnimation}>
-              {/* Project 1 */}
-
-              <Card
-                shadow={5}
-                style={{
-                  minWidth: '450',
-                  margin: 'auto',
-                  borderRadius: 5,
-                  background: '#112240',
-                  marginLeft: 409,
-                  height: 320,
-                  maxHeight: 320,
-                }}
-              >
-                <CardTitle
-                  style={{
-                    color: '#e6f1ff',
-                    height: '140px',
-                  }}
-                >
-                  SpaceShooterPro
-                </CardTitle>
-                <CardText
-                  style={{
-                    color: '#ccd6f6',
-                  }}
-                >
-                  This is a small game designed and built in unity, It is a
-                  small shooter game where a spaceship follows a set path in a
-                  2d world and enemy spaceships must be shot down to win
-                </CardText>
-                <CardText
-                  style={{
-                    color: '#8892b0',
-                  }}
-                >
-                  <p>unity, c# </p>
-                </CardText>
-
-                <CardMenu style={{ color: '#FFFFFF' }}>
-                  <a href='wwww.conorwalters.com'>
-                    <LaunchIcon style={{ marginRight: 10 }} />
-                  </a>
-                  <a href='https://github.com/Cheesiewalters/PersonalWebsite'>
-                    <GitHubIcon />
-                  </a>
-                </CardMenu>
-              </Card>
-
-              {/* Project 2 */}
-
-              <Card
-                shadow={5}
-                style={{
-                  minWidth: '450',
-                  margin: 'auto',
-                  borderRadius: 5,
-                  background: '#112240',
-                  height: 320,
-                  maxHeight: 320,
-                }}
-              >
-                <CardTitle
-                  style={{
-                    color: '#e6f1ff',
-                    height: '140px',
-                  }}
-                >
-                  Hireland
-                </CardTitle>
-                <CardText
-                  style={{
-                    color: '#ccd6f6',
-                  }}
-                >
-                  This website was creatde for my final year university project,
-                  it is a platform aimed to bring trades-persons and customers
-                  together through an online platform
-                </CardText>
-                <CardText
-                  style={{
-                    color: '#8892b0',
-                  }}
-                >
-                  <p>Node, React, Github, Firebase </p>
-                </CardText>
-
-                <CardMenu style={{ color: '#FFFFFF' }}>
-                  <a href='https://github.com/Cheesiewalters/Hireland'>
-                    <GitHubIcon />
-                  </a>
-                </CardMenu>
-              </Card>
-
-              {/* Project 3 */}
-
-              <Card
-                shadow={5}
-                style={{
-                  minWidth: '450',
-                  margin: 'auto',
-                  borderRadius: 5,
-                  background: '#112240',
-                  marginRight: 450,
-                  height: 320,
-                  maxHeight: 320,
-                }}
-              >
-                <CardTitle
-                  style={{
-                    color: '#e6f1ff',
-                    height: '140px',
-                  }}
-                >
-                  Project 3
-                </CardTitle>
-                <CardText
-                  style={{
-                    color: '#ccd6f6',
-                  }}
-                >
-                  I will be completing this project to make this page look nice
-                  and to get more experienced with react. I hope to use the
-                  spotify api to create this website
-                </CardText>
-                <CardText
-                  style={{
-                    color: '#8892b0',
-                  }}
-                >
-                  <p>Node, React, Github, Firebase </p>
-                </CardText>
-
-                <CardMenu style={{ color: '#FFFFFF' }}>
-                  <a href='https://github.com/Cheesiewalters/PersonalWebsite'>
-                    <GitHubIcon href='https://github.com/Cheesiewalters/PersonalWebsite' />
-                  </a>
-                </CardMenu>
-              </Card>
-            </div>
-          </Slide>
-        </StyleRoot>
-      );
+      // }
     }
   }
 
@@ -338,7 +147,6 @@ class Projects extends Component {
           ripple
         >
           <Tab style={{ color: '#ffffff' }}>React</Tab>
-          <Tab style={{ color: '#ffffff' }}>Unity</Tab>
         </Tabs>
 
         <Grid>

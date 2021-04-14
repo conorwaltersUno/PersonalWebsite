@@ -87,6 +87,7 @@
 /* Projects Page */
 .projects-grid {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -297,7 +298,7 @@
   display: flex;
   justify-content: space-between;
   text-align: left;
-  width: 50%;
+  width: 20%;
   margin: auto;
   opacity: 0.4;
 }
