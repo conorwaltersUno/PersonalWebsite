@@ -89,12 +89,12 @@ class TestResults extends Component {
                 {
                   module: 'Malware Analysis',
                   year: 4,
-                  result: '75% in exam first 50% exam',
+                  result: '75% in first exam of semester',
                 },
                 {
                   module: 'Cloud Computing',
                   year: 4,
-                  result: '65% in exam first submission of semester',
+                  result: '65% in first submission of semester',
                 },
               ]}
             >
