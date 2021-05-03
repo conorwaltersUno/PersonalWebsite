@@ -125,6 +125,7 @@ const Resume = () => {
             <Skills skill='HTML/CSS' progress={80} />
             <Skills skill='Windows 7/8/9/10' progress={80} />
             <Skills skill='Postman' progress={80} />
+            <Skills skill='Docker' progress={80} />
             <Skills skill='NodeJS' progress={70} />
             <Skills skill='ExpressJS' progress={70} />
             <Skills skill='Github' progress={70} />
@@ -132,7 +133,6 @@ const Resume = () => {
             <Skills skill='C#' progress={50} />
             <Skills skill='Mac OS' progress={50} />
             <Skills skill='Jenkins (CI/CD)' progress={40} />
-            <Skills skill='Docker' progress={40} />
           </Slide>
         </Cell>
       </Grid>
