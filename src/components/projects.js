@@ -153,7 +153,7 @@ class Projects extends Component {
                   color: '#ccd6f6',
                 }}
               >
-                This is a project I created over a weekend that takes in a long URL and will replace it with a shorter URL, it was build using expressJS and react.
+                This is a project I created over a weekend that takes in a long URL and will replace it with a shorter URL, it was built using expressJS and react. Click the links above to see the live website.
               </CardText>
               <CardText
                 style={{
