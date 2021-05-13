@@ -43,7 +43,6 @@ class Projects extends Component {
               shadow={5}
               style={{
                 minWidth: '450',
-                marginLeft: '25%',
                 borderRadius: 5,
                 background: '#112240',
                 height: 320,
@@ -122,9 +121,56 @@ class Projects extends Component {
               >
                 <p>Node, React, Github </p>
               </CardText>
-
               <CardMenu style={{ color: '#FFFFFF' }}>
                 <a href='https://github.com/Cheesiewalters/Hireland'>
+                  <GitHubIcon />
+                </a>
+              </CardMenu>
+            </Card>
+
+              <Card
+              shadow={5}
+              style={{
+                minWidth: '450',
+                
+                borderRadius: 5,
+                background: '#112240',
+                height: 320,
+                maxHeight: 320,
+                
+              }}
+            >
+              <CardTitle
+                style={{
+                  color: '#e6f1ff',
+                  height: '140px',
+                }}
+              >
+                URL shortener
+              </CardTitle>
+              <CardText
+                style={{
+                  color: '#ccd6f6',
+                }}
+              >
+                This is a project I created over a weekend that takes in a long URL and will replace it with a shorter URL, it was build using expressJS and react.
+              </CardText>
+              <CardText
+                style={{
+                  color: '#8892b0',
+                }}
+              >
+                <p>Node, React, Github, Docker </p>
+              </CardText>
+
+              <CardMenu style={{ color: '#FFFFFF' }}>
+                <a href='http://40198023.urlshortener.frontend.qpc.hal.davecutting.uk/'>
+                  <LaunchIcon style={{ marginRight: 10 }} />
+                </a>
+                <a href='http://gitlab.hal.davecutting.uk/40198023/url-react-frontend'>
+                  <GitHubIcon />
+                </a>
+                <a href='http://gitlab.hal.davecutting.uk/40198023/url-shrink-api'>
                   <GitHubIcon />
                 </a>
               </CardMenu>
