@@ -76,7 +76,7 @@ const Resume = () => {
 
             <h5 style={{ color: 'white' }}>Website</h5>
             <Link to='/' style={{ color: 'white' }}>
-              www.conorwalters.com
+            https://personal-cv-90a61.web.app
             </Link>
             <hr
               style={{
