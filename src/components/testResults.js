@@ -79,7 +79,7 @@ class TestResults extends Component {
                 {
                   module: 'Software Engineering Project',
                   year: 4,
-                  result: 'Not Marked',
+                  result: 73 + '%',
                 },
                 {
                   module: 'Advanced Computer Arch',
@@ -89,12 +89,12 @@ class TestResults extends Component {
                 {
                   module: 'Malware Analysis',
                   year: 4,
-                  result: '75% in first exam of semester',
+                  result: 75 + '%',
                 },
                 {
                   module: 'Cloud Computing',
                   year: 4,
-                  result: '65% in first submission of semester',
+                  result: 70 + '%',
                 },
               ]}
             >
