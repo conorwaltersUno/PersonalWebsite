@@ -128,7 +128,7 @@ const Resume = () => {
               endYear={"Current"}
               jobName="Software Engineer 1"
               company="Payroc"
-              jobDescription="During my time at Payroc I have mainly been involved in production support using my knowledg of .net core and SQL to debug production environment."
+              jobDescription="During my time at Payroc I have mainly been involved in production support using my knowledge of .net core and SQL to debug production environments."
             />
           </Slide>
 
