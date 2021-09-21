@@ -44,6 +44,7 @@ class Projects extends Component {
               style={{
                 minWidth: "450",
                 borderRadius: 5,
+                margin: 50,
                 background: "#112240",
                 height: 320,
                 maxHeight: 320,
@@ -75,7 +76,7 @@ class Projects extends Component {
               </CardText>
 
               <CardMenu style={{ color: "#FFFFFF" }}>
-                <a href="wwww.conorwalters.com">
+                <a href="https://personal-cv-90a61.web.app">
                   <LaunchIcon style={{ marginRight: 10 }} />
                 </a>
                 <a href="https://github.com/Cheesiewalters/PersonalWebsite">
@@ -89,7 +90,7 @@ class Projects extends Component {
               shadow={5}
               style={{
                 minWidth: "450",
-                margin: "auto",
+                margin: 50,
                 borderRadius: 5,
                 background: "#112240",
                 height: 320,
@@ -128,11 +129,12 @@ class Projects extends Component {
               </CardMenu>
             </Card>
 
+            {/* Project 3 */}
             <Card
               shadow={5}
               style={{
                 minWidth: "450",
-
+                margin: 50,
                 borderRadius: 5,
                 background: "#112240",
                 height: 320,
@@ -154,8 +156,7 @@ class Projects extends Component {
               >
                 This is a project I created over a weekend that takes in a long
                 URL and will replace it with a shorter URL, it was built using
-                expressJS and react. Click the links above to see the live
-                website.
+                expressJS and react.
               </CardText>
               <CardText
                 style={{
@@ -171,6 +172,55 @@ class Projects extends Component {
                 </a>
                 &nbsp;
                 <a href="http://gitlab.hal.davecutting.uk/40198023/url-shrink-api">
+                  <GitHubIcon />
+                </a>
+              </CardMenu>
+            </Card>
+
+            {/* Project 3 */}
+            <Card
+              shadow={5}
+              style={{
+                minWidth: "450",
+                margin: 50,
+                borderRadius: 5,
+                background: "#112240",
+                height: 320,
+                maxHeight: 320,
+              }}
+            >
+              <CardTitle
+                style={{
+                  color: "#e6f1ff",
+                  height: "140px",
+                }}
+              >
+                Weather Tracker
+              </CardTitle>
+              <CardText
+                style={{
+                  color: "#ccd6f6",
+                }}
+              >
+                This project uses the NASA open API to get all current severe
+                storms and wildfires happening in the world at this current
+                moment. It plots these events onto a google map component so
+                they can be visualised and interacted with.
+              </CardText>
+              <CardText
+                style={{
+                  color: "#8892b0",
+                }}
+              >
+                <p>Node, React, Github, Docker </p>
+              </CardText>
+
+              <CardMenu style={{ color: "#FFFFFF" }}>
+                <a href="https://weather-tracker-5abcf.web.app/">
+                  <LaunchIcon style={{ marginRight: 10 }} />
+                </a>
+                &nbsp;
+                <a href="https://github.com/Cheesiewalters/weather-tracker">
                   <GitHubIcon />
                 </a>
               </CardMenu>
