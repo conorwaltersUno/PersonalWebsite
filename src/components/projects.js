@@ -212,7 +212,7 @@ class Projects extends Component {
                   color: "#8892b0",
                 }}
               >
-                <p>Node, React, Github, Docker </p>
+                <p>React, Github, Firebase, NASA Api </p>
               </CardText>
 
               <CardMenu style={{ color: "#FFFFFF" }}>
