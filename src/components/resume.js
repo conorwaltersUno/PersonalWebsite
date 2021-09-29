@@ -102,7 +102,7 @@ const Resume = () => {
               startYear={2017}
               endYear={2021}
               schoolName="Queen's University Belfast"
-              degree="BEng Software Engineering"
+              degree="First-Class honours BEng Software Engineering"
               link="https://www.qub.ac.uk/courses/undergraduate/software-engineering-placement-beng-g604/#course"
             />
 
