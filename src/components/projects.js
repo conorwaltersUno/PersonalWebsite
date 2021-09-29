@@ -177,7 +177,7 @@ class Projects extends Component {
               </CardMenu>
             </Card>
 
-            {/* Project 3 */}
+            {/* Project 4 */}
             <Card
               shadow={5}
               style={{
@@ -221,6 +221,55 @@ class Projects extends Component {
                 </a>
                 &nbsp;
                 <a href="https://github.com/Cheesiewalters/weather-tracker">
+                  <GitHubIcon />
+                </a>
+              </CardMenu>
+            </Card>
+
+            {/* Project 5 */}
+            <Card
+              shadow={5}
+              style={{
+                minWidth: "450",
+                margin: 50,
+                borderRadius: 5,
+                background: "#112240",
+                height: 320,
+                maxHeight: 320,
+              }}
+            >
+              <CardTitle
+                style={{
+                  color: "#e6f1ff",
+                  height: "140px",
+                }}
+              >
+                To-do
+              </CardTitle>
+              <CardText
+                style={{
+                  color: "#ccd6f6",
+                }}
+              >
+                This is a simple to-do setup using react as the framework. It
+                uses an array to store the current to-dos and the user can click
+                on each to-do in order to move them to the complete section.
+                This was completely developed from the start by me
+              </CardText>
+              <CardText
+                style={{
+                  color: "#8892b0",
+                }}
+              >
+                <p>React, Github, Firebase</p>
+              </CardText>
+
+              <CardMenu style={{ color: "#FFFFFF" }}>
+                <a href="https://todo-project-e5aea.web.app/">
+                  <LaunchIcon style={{ marginRight: 10 }} />
+                </a>
+                &nbsp;
+                <a href="https://github.com/Cheesiewalters/to-do">
                   <GitHubIcon />
                 </a>
               </CardMenu>
