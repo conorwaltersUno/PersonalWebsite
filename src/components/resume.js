@@ -52,15 +52,16 @@ const Resume = () => {
               I have completed my studies at Queen's University Belfast
               obtaining a first class honours. I am currently working as a
               Software Engineer at &nbsp;
-              <Link to="https://payroc.com/" style={{ color: "white" }}>
-                Payroc
+              <Link to="https://www.unosquare.com/" style={{ color: "white" }}>
+                Unosquare
               </Link>
             </p>
 
             <p style={{ color: "white" }}>
-              Please do not hesitate to contact me either by the email or phone
-              number listed below if you have any enquires about my education or
-              cv!.
+              I have a passion for programming + technology and I aim to
+              continually expand my understanding of everything technology I
+              work with. I have been working with Javascript for 2+ years now
+              and I am very familar with React as my main framework
             </p>
             <hr
               style={{
@@ -80,10 +81,6 @@ const Resume = () => {
               cwalters01@qub.ac.uk
             </a>
 
-            <h5 style={{ color: "white" }}>Website</h5>
-            <Link to="/" style={{ color: "white" }}>
-              https://personal-cv-90a61.web.app
-            </Link>
             <hr
               style={{
                 borderTop: "3px solid #64ffda",
@@ -125,10 +122,19 @@ const Resume = () => {
           <Slide left>
             <Experience
               startYear={"July " + 2021}
-              endYear={"Current"}
+              endYear={"Novemeber" + 2021}
               jobName="Software Engineer 1"
               company="Payroc"
-              jobDescription="During my time at Payroc I have mainly been involved in production support using my knowledge of .net core and SQL to debug production environments."
+              jobDescription="During my time at Payroc I was mainly involved in production support using my knowledge of .net core and SQL to debug production environments."
+            />
+          </Slide>
+          <Slide left>
+            <Experience
+              startYear={"November " + 2021}
+              endYear={"Current"}
+              jobName="Software Engineer "
+              company="Unosquare"
+              jobDescription="At Unosquare I have been involved in consulting for clients from all over the world and I have worked within many different teams to produce production-ready, scalable solutions within an agile software environment. My main goal while working with Unosquare has been to continue to gain a greater understanding of technologies such as React, HTML/CSS, Docker, AWS and MYSQL and by getting exposure to these technologies on a daily basis this has greatly increased my knowledge around these areas. I have gained a much greater understanding of how to production production software through utilising AWS to host software solutions through: AWS s3, AWS lightsail and AWS RDS"
             />
           </Slide>
 
@@ -138,15 +144,14 @@ const Resume = () => {
             <Skills skill="React" progress={80} />
             <Skills skill="HTML/CSS" progress={80} />
             <Skills skill="Windows 7/8/9/10" progress={80} />
+            <Skills skill="Mac OS" progress={80} />
             <Skills skill="Postman" progress={80} />
             <Skills skill="Docker" progress={80} />
             <Skills skill="Javascript ES6" progress={75} />
+            <Skills skill="Typescript" progress={75} />
             <Skills skill="NodeJS" progress={70} />
-            <Skills skill="ExpressJS" progress={70} />
             <Skills skill="Github" progress={70} />
-            <Skills skill="C#" progress={50} />
-            <Skills skill="Mac OS" progress={50} />
-            <Skills skill="Jenkins (CI/CD)" progress={40} />
+            <Skills skill="AWS" progress={70} />
           </Slide>
         </Cell>
       </Grid>

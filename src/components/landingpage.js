@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import { Grid, Cell } from 'react-mdl';
-import Radium, { StyleRoot } from 'radium';
-import { headShake, fadeInLeftBig } from 'react-animations';
+import React, { Component } from "react";
+import { Grid, Cell } from "react-mdl";
+import Radium, { StyleRoot } from "radium";
+import { headShake, fadeInLeftBig } from "react-animations";
 
 const styles = {
   bannerFadeIn: {
-    animationDuration: '3s',
-    animationName: Radium.keyframes(fadeInLeftBig, 'fadeInLeftBig'),
+    animationDuration: "2s",
+    animationName: Radium.keyframes(fadeInLeftBig, "fadeInLeftBig"),
   },
   textFadeIn: {
-    animationDuration: '6s',
-    animationName: Radium.keyframes(fadeInLeftBig, 'fadeInLeftBig'),
+    animationDuration: "4s",
+    animationName: Radium.keyframes(fadeInLeftBig, "fadeInLeftBig"),
   },
   imageFadeIn: {
-    animationDuration: '6s',
-    animationName: Radium.keyframes(fadeInLeftBig, 'fadeInLeftBig'),
+    animationDuration: "4s",
+    animationName: Radium.keyframes(fadeInLeftBig, "fadeInLeftBig"),
   },
   socialFadeIn: {
-    animationDuration: '6s',
-    animationName: Radium.keyframes(headShake, 'headShake'),
+    animationDuration: "4s",
+    animationName: Radium.keyframes(headShake, "headShake"),
   },
 };
 
@@ -26,40 +26,40 @@ class Landing extends Component {
   render() {
     return (
       <StyleRoot>
-        <div style={{ width: '100%', margin: 'auto' }}>
-          <Grid className='landing-grid'>
+        <div style={{ width: "100%", margin: "auto" }}>
+          <Grid className="landing-grid">
             <Cell col={12}>
-              <div className='avatar-toolbar-splitter'></div>
-              <div className='banner-text' style={styles.bannerFadeIn}>
+              <div className="avatar-toolbar-splitter"></div>
+              <div className="banner-text" style={styles.bannerFadeIn}>
                 <h5 style={styles.textFadeIn}>Hi, I am </h5>
                 <h1 style={styles.textFadeIn}>Conor Walters.</h1>
                 <h2 style={styles.textFadeIn}>Full Stack Web Developer.</h2>
 
                 <p style={styles.textFadeIn}>
                   HTML/CSS | JavaScript | React | React Native | NodeJS |
-                  ExpressJS | MongoDB | SQL
+                  ExpressJS | MongoDB | SQL | AWS | MacOS
                 </p>
 
-                <div className='social-links' style={styles.imageFadeIn}>
+                <div className="social-links" style={styles.imageFadeIn}>
                   {/* LinkedIn */}
                   <a
-                    href='https://www.linkedin.com/in/conor-walters-99b49a173/'
-                    rel='noopener noreferrer'
-                    target='_blank'
+                    href="https://www.linkedin.com/in/conor-walters-99b49a173/"
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
                     <i
-                      className='fa fa-linkedin-square tex-black'
-                      aria-hidden='true'
+                      className="fa fa-linkedin-square tex-black"
+                      aria-hidden="true"
                     />
                   </a>
 
                   {/* Github */}
                   <a
-                    href='https://github.com/Cheesiewalters'
-                    rel='noopener noreferrer'
-                    target='_blank'
+                    href="https://github.com/Cheesiewalters"
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
-                    <i className='fa fa-github-square' aria-hidden='true' />
+                    <i className="fa fa-github-square" aria-hidden="true" />
                   </a>
                 </div>
               </div>

@@ -274,6 +274,56 @@ class Projects extends Component {
                 </a>
               </CardMenu>
             </Card>
+            {/* Project 5 */}
+            <Card
+              shadow={5}
+              style={{
+                minWidth: "450",
+                margin: 50,
+                borderRadius: 5,
+                background: "#112240",
+                height: 320,
+                maxHeight: 400,
+              }}
+            >
+              <CardTitle
+                style={{
+                  color: "#e6f1ff",
+                  height: "140px",
+                }}
+              >
+                Sail app
+              </CardTitle>
+              <CardText
+                style={{
+                  color: "#ccd6f6",
+                }}
+              >
+                This is a complex sailing app designed for use by yacht clubs to
+                track all races, results and boats that are competing in club
+                races. The project was designed from the ground up including ERD
+                diagrams for database design.
+              </CardText>
+              <CardText
+                style={{
+                  color: "#8892b0",
+                }}
+              >
+                <p>
+                  React, Github, AWS, postressSQL, expressJS, Flyway, Prisma
+                </p>
+              </CardText>
+
+              <CardMenu style={{ color: "#FFFFFF" }}>
+                {/* <a href="https://todo-project-e5aea.web.app/">
+                  <LaunchIcon style={{ marginRight: 10 }} />
+                </a> */}
+                &nbsp;
+                <a href="https://github.com/conorwaltersUno/SailApp">
+                  <GitHubIcon />
+                </a>
+              </CardMenu>
+            </Card>
           </div>
         </StyleRoot>
       );

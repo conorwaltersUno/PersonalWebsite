@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import Spinner from './layout/Spinner';
-import '../css/splash-screen.css';
+import React, { Component } from "react";
+import Spinner from "./layout/Spinner";
+import "../css/splash-screen.css";
 
 function LoadingMessage() {
   return (
-    <div className='demo-big-content'>
-      <div className='splash-screen'>
+    <div className="demo-big-content">
+      <div className="splash-screen">
         <Spinner />
       </div>
     </div>
@@ -27,7 +27,7 @@ function withSplashScreen(WrappedComponent) {
           this.setState({
             loading: false,
           });
-        }, 6000);
+        }, 0);
       } catch (err) {
         console.log(err);
         this.setState({
