@@ -122,7 +122,7 @@ const Resume = () => {
           <Slide left>
             <Experience
               startYear={"July " + 2021}
-              endYear={"Novemeber" + 2021}
+              endYear={"Novemeber " + 2021}
               jobName="Software Engineer 1"
               company="Payroc"
               jobDescription="During my time at Payroc I was mainly involved in production support using my knowledge of .net core and SQL to debug production environments."
