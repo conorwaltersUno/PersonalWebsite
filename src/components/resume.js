@@ -80,6 +80,10 @@ const Resume = () => {
             <a href="cwalters01@qub.ac.uk" style={{ color: "#64ffda" }}>
               cwalters01@qub.ac.uk
             </a>
+            <h5 style={{ color: "white" }}>Github</h5>
+            <a href="cwalters01@qub.ac.uk" style={{ color: "#64ffda" }}>
+              https://github.com/conorwaltersUno
+            </a>
 
             <hr
               style={{
