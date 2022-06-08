@@ -134,7 +134,7 @@ const Resume = () => {
               endYear={"Current"}
               jobName="Software Engineer "
               company="Unosquare"
-              jobDescription="At Unosquare I have been involved in consulting for clients from all over the world and I have worked within many different teams to produce production-ready, scalable solutions within an agile software environment. My main goal while working with Unosquare has been to continue to gain a greater understanding of technologies such as React, HTML/CSS, Docker, AWS and MYSQL and by getting exposure to these technologies on a daily basis this has greatly increased my knowledge around these areas. I have gained a much greater understanding of how to production production software through utilising AWS to host software solutions through: AWS s3, AWS lightsail and AWS RDS"
+              jobDescription="At Unosquare I have been involved in consulting for clients from all over the world and I have worked within many different teams to produce production-ready, scalable solutions within an agile software environment. My main goal while working with Unosquare has been to continue to gain a greater understanding of technologies such as React, HTML/CSS, Docker, AWS and MYSQL and by getting exposure to these technologies on a daily basis this has greatly increased my knowledge around these areas. I have gained a much greater understanding of how to produce production ready software through utilising AWS to host software solutions through: AWS s3, AWS lightsail and AWS RDS"
             />
           </Slide>
 
