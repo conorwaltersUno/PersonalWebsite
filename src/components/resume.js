@@ -40,7 +40,7 @@ const Resume = () => {
           </div>
           <div style={styles.leftTextFadeIn}>
             <h2 style={{ paddingTop: "2em", color: "white" }}>Conor Walters</h2>
-            <h4 style={{ color: "white" }}>Graduate Software Engineer</h4>
+            <h4 style={{ color: "white" }}>Fullstack Software Engineer</h4>
             <hr
               style={{
                 borderTop: "3px solid #64ffda",
