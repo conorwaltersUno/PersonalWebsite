@@ -145,15 +145,16 @@ const Resume = () => {
           <Slide left>
             <hr style={{ borderTop: "3px solid #64ffda" }} />
             <h2>Skills</h2>
-            <Skills skill="React" progress={80} />
+            <Skills skill="Mac OS" progress={100} />
+            <Skills skill="React" progress={90} />
+            <Skills skill="React Native" progress={90} />
             <Skills skill="HTML/CSS" progress={80} />
             <Skills skill="Windows 7/8/9/10" progress={80} />
-            <Skills skill="Mac OS" progress={80} />
             <Skills skill="Postman" progress={80} />
             <Skills skill="Docker" progress={80} />
-            <Skills skill="Javascript ES6" progress={75} />
-            <Skills skill="Typescript" progress={75} />
-            <Skills skill="NodeJS" progress={70} />
+            <Skills skill="Javascript" progress={75} />
+            <Skills skill="Typescript" progress={85} />
+            <Skills skill="NodeJS" progress={80} />
             <Skills skill="Github" progress={70} />
             <Skills skill="AWS" progress={70} />
           </Slide>
