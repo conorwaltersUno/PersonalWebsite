@@ -33,11 +33,13 @@ class Landing extends Component {
               <div className="banner-text" style={styles.bannerFadeIn}>
                 <h5 style={styles.textFadeIn}>Hi, I am </h5>
                 <h1 style={styles.textFadeIn}>Conor Walters.</h1>
-                <h2 style={styles.textFadeIn}>Full Stack Web Developer.</h2>
+                <h2 style={styles.textFadeIn}>
+                  Intermediate Software Developer.
+                </h2>
 
                 <p style={styles.textFadeIn}>
-                  HTML/CSS | JavaScript | React | React Native | NodeJS |
-                  ExpressJS | MongoDB | SQL | AWS | MacOS
+                  JavaScript | Java (Spring) | React | React Native | NodeJS |
+                  ExpressJS | MongoDB | MySQL | Docker | Flyway | AWS | MacOS
                 </p>
 
                 <div className="social-links" style={styles.imageFadeIn}>

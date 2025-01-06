@@ -40,7 +40,7 @@ const Resume = () => {
           </div>
           <div style={styles.leftTextFadeIn}>
             <h2 style={{ paddingTop: "2em", color: "white" }}>Conor Walters</h2>
-            <h4 style={{ color: "white" }}>Fullstack Software Engineer</h4>
+            <h4 style={{ color: "white" }}>Intermediate Software Engineer</h4>
             <hr
               style={{
                 borderTop: "3px solid #64ffda",
@@ -58,10 +58,11 @@ const Resume = () => {
             </p>
 
             <p style={{ color: "white" }}>
-              I have a passion for programming + technology and I aim to
-              continually expand my understanding of everything technology I
-              work with. I have been working with Javascript for 2+ years now
-              and I am very familar with React as my main framework
+              I have a passion for programming and technology and I aim to
+              continually expand my understanding with all technology I work in
+              and have an interest in outside of work. I have been working with
+              NodeJs and Java for 3+ years now and I am familar with React and
+              React Native as my main frontend framework
             </p>
             <hr
               style={{
@@ -138,7 +139,7 @@ const Resume = () => {
               endYear={"Current"}
               jobName="Software Engineer "
               company="Unosquare"
-              jobDescription="At Unosquare I have been involved in consulting for clients from all over the world and I have worked within many different teams to produce production-ready, scalable solutions within an agile software environment. My main goal while working with Unosquare has been to continue to gain a greater understanding of technologies such as React, HTML/CSS, Docker, AWS and MYSQL and by getting exposure to these technologies on a daily basis this has greatly increased my knowledge around these areas. I have gained a much greater understanding of how to produce production ready software through utilising AWS to host software solutions through: AWS s3, AWS lightsail and AWS RDS"
+              jobDescription="At Unosquare I have been involved in consulting for clients from all over the world and I have worked within many different teams to produce production-ready, scalable solutions within an agile software environment. My main goal while working with Unosquare has been to continue to gain a greater understanding of technologies such as Nodejs, Java Spring, React, Docker, AWS and MYSQL by gainging exposure to these technologies on a daily basis this has greatly increased my knowledge around these areas and allowed me a great opportunity to work alongside many talented developers across many different. I have gained a much greater understanding of how to produce production ready software through utilising AWS to host software solutions through: AWS s3, AWS lightsail and AWS RDS"
             />
           </Slide>
 
@@ -146,17 +147,16 @@ const Resume = () => {
             <hr style={{ borderTop: "3px solid #64ffda" }} />
             <h2>Skills</h2>
             <Skills skill="Mac OS" progress={100} />
-            <Skills skill="React" progress={90} />
-            <Skills skill="React Native" progress={90} />
-            <Skills skill="HTML/CSS" progress={80} />
-            <Skills skill="Windows 7/8/9/10" progress={80} />
+            <Skills skill="Javascript" progress={90} />
+            <Skills skill="Typescript" progress={90} />
+            <Skills skill="NodeJS" progress={90} />
+            <Skills skill="Java Spring" progress={90} />
+            <Skills skill="AWS" progress={80} />
+            <Skills skill="React" progress={75} />
+            <Skills skill="React Native" progress={75} />
             <Skills skill="Postman" progress={80} />
             <Skills skill="Docker" progress={80} />
-            <Skills skill="Javascript" progress={75} />
-            <Skills skill="Typescript" progress={85} />
-            <Skills skill="NodeJS" progress={80} />
             <Skills skill="Github" progress={70} />
-            <Skills skill="AWS" progress={70} />
           </Slide>
         </Cell>
       </Grid>
