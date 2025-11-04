@@ -93,7 +93,7 @@ export default function Contact() {
                 want to collaborate on an exciting project, I'd love to hear from you.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col gap-6 items-center">
                 <a
                   href="mailto:cwalters01@qub.ac.uk"
                   className="group/btn relative px-8 py-4 bg-gradient-to-r from-accent-cyan to-accent-blue rounded-lg font-semibold text-white overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent-cyan/50"
@@ -105,23 +105,44 @@ export default function Contact() {
                   <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
                 </a>
 
-                <div className="flex gap-3">
-                  <a
-                    href="/Conor-Walters-Resume.pages"
-                    download
-                    className="group/btn px-6 py-4 glass glass-hover rounded-lg font-semibold text-white transition-all hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    <Download size={18} />
-                    Resume (.pages)
-                  </a>
-                  <a
-                    href="/Conor-Walters-Resume.docx"
-                    download
-                    className="group/btn px-6 py-4 glass glass-hover rounded-lg font-semibold text-white transition-all hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    <Download size={18} />
-                    Resume (.docx)
-                  </a>
+                {/* Resume Download Section */}
+                <div className="w-full max-w-md">
+                  <p className="text-center text-gray-400 text-sm mb-3">Download Resume</p>
+                  <div className="grid grid-cols-3 gap-3">
+                    <a
+                      href="/Conor-Walters-Resume.pdf"
+                      download
+                      className="group/resume glass glass-hover rounded-xl p-4 text-center transition-all hover:scale-105 hover:shadow-xl hover:shadow-accent-cyan/30"
+                    >
+                      <div className="flex flex-col items-center gap-2">
+                        <Download size={24} className="text-accent-cyan group-hover/resume:animate-bounce" />
+                        <span className="text-sm font-medium">PDF</span>
+                        <span className="text-xs text-gray-500">Universal</span>
+                      </div>
+                    </a>
+                    <a
+                      href="/Conor-Walters-Resume.docx"
+                      download
+                      className="group/resume glass glass-hover rounded-xl p-4 text-center transition-all hover:scale-105 hover:shadow-xl hover:shadow-accent-blue/30"
+                    >
+                      <div className="flex flex-col items-center gap-2">
+                        <Download size={24} className="text-accent-blue group-hover/resume:animate-bounce" />
+                        <span className="text-sm font-medium">DOCX</span>
+                        <span className="text-xs text-gray-500">Word</span>
+                      </div>
+                    </a>
+                    <a
+                      href="/Conor-Walters-Resume.pages"
+                      download
+                      className="group/resume glass glass-hover rounded-xl p-4 text-center transition-all hover:scale-105 hover:shadow-xl hover:shadow-accent-purple/30"
+                    >
+                      <div className="flex flex-col items-center gap-2">
+                        <Download size={24} className="text-accent-purple group-hover/resume:animate-bounce" />
+                        <span className="text-sm font-medium">Pages</span>
+                        <span className="text-xs text-gray-500">macOS</span>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
