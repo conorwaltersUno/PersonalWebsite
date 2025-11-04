@@ -94,7 +94,7 @@ export default function Experience() {
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 transition={{ delay: index * 0.2, duration: 0.8 }}
                 className={`relative mb-12 ${
-                  index % 2 === 0 ? 'md:pr-[50%] md:text-right' : 'md:pl-[50%] md:text-left'
+                  index % 2 === 0 ? 'md:pr-[52%] md:text-right' : 'md:pl-[52%] md:text-left'
                 }`}
               >
                 {/* Timeline Dot */}
