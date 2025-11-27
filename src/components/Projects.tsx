@@ -89,7 +89,7 @@ export default function Projects() {
             {projects
               .filter((p) => p.size === 'large')
               .map((project) => (
-                <ProjectCard key={project.title} project={project} variants={itemVariants} />
+                <ProjectCard key={project.title} project={project} />
               ))}
           </div>
 
@@ -99,14 +99,14 @@ export default function Projects() {
               .filter((p) => p.size === 'medium')
               .map((project) => (
                 <motion.div key={project.title} variants={itemVariants} className="lg:col-span-2">
-                  <ProjectCard project={project} variants={itemVariants} />
+                  <ProjectCard project={project} />
                 </motion.div>
               ))}
             {projects
               .filter((p) => p.size === 'small')
               .map((project) => (
                 <motion.div key={project.title} variants={itemVariants} className="lg:col-span-1">
-                  <ProjectCard project={project} variants={itemVariants} />
+                  <ProjectCard project={project} />
                 </motion.div>
               ))}
           </div>
@@ -135,7 +135,6 @@ export default function Projects() {
 
 interface ProjectCardProps {
   project: Project
-  variants: typeof import('framer-motion').Variants
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
