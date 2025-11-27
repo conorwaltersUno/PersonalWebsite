@@ -81,7 +81,7 @@ export default function About() {
 
               <p className="text-body text-ink-medium dark:text-paper-mid leading-relaxed">
                 I think in TypeScript and React. My backend work spans Node.js and Java Spring.
-                I've shipped to AWS, Railway, and bare metal. I care about developer experience
+                I've shipped to AWS, Railway. I care about developer experience
                 as much as user experience—because the two are more connected than most realize.
               </p>
             </motion.div>
@@ -96,9 +96,9 @@ export default function About() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  'Code should be readable first, clever second.',
                   'Ship early, iterate often, listen always.',
                   'Documentation is a feature, not an afterthought.',
+                  'Testing is a vital part of the SDLC process and requires the most attention',
                   'The best architecture is the one you can explain in five minutes.',
                 ].map((belief, index) => (
                   <motion.li

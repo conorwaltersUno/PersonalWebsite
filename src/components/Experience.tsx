@@ -23,6 +23,7 @@ const experiences: Experience[] = [
       'Architecting Software as a Medical Device (SaMD) platform that monitors software releases and identifies compliance issues before deployment',
       'Built microservices platform serving 1000+ daily active users',
       'Reduced deployment time by 60% through CI/CD pipeline optimization',
+      'Saved $1000\'s in optimising AWS usage across the application',
       'Led team of 4 engineers developing React Native mobile application',
     ],
     tech: ['TypeScript', 'React', 'React Native', 'Node.js', 'AWS', 'PostgreSQL'],
@@ -45,8 +46,8 @@ const experiences: Experience[] = [
     period: '2019 — 2020',
     description: 'Healthcare technology, patient monitoring systems.',
     achievements: [
-      'Developed critical features for patient monitoring systems',
-      'Improved application performance by 30% through code optimization',
+      'Developed features for a Patient to Pathologist care system',
+      'Developed and designed imaging tool annotation software for slide viewer software',
       'Participated in Agile ceremonies and sprint planning',
     ],
     tech: ['Java', 'JavaScript', 'REST APIs'],

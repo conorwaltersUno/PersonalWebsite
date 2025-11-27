@@ -732,7 +732,7 @@ Like an architecture portfolio's project brief. Efficient. Factual. Interspersed
 4. **Skills as prose, not badges:**
    Instead of "TypeScript 95%" show:
 
-   > "I think in TypeScript and React. My backend work spans Node and Java Spring. I've shipped to AWS, Railway, and bare metal. I care about developer experience as much as user experience."
+   > "I think in TypeScript and React. My backend work spans Node and Java Spring. I've shipped to AWS, Railway. I care about developer experience as much as user experience."
 
 5. **Optional: Beliefs/Values**
    Short, punchy statements that reveal personality:
