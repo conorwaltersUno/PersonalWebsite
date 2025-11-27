@@ -1,194 +1,141 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState, useEffect } from 'react'
-import { Code2, Layers, Cloud, Users } from 'lucide-react'
-
-const stats = [
-  { label: 'Years Experience', value: 4, suffix: '+' },
-  { label: 'Projects Delivered', value: 5, suffix: '+' },
-  { label: 'Technologies', value: 10, suffix: '+' },
-]
-
-const skillCategories = [
-  {
-    icon: Code2,
-    title: 'Languages',
-    skills: [
-      { name: 'TypeScript', level: 95 },
-      { name: 'JavaScript', level: 95 },
-      { name: 'Java', level: 85 },
-      { name: 'GoLang', level: 75 },
-    ]
-  },
-  {
-    icon: Layers,
-    title: 'Frontend',
-    skills: [
-      { name: 'React', level: 95 },
-      { name: 'Material-UI', level: 90 },
-      { name: 'Tailwind CSS', level: 85 },
-      { name: 'React Native', level: 85 },
-    ]
-  },
-  {
-    icon: Cloud,
-    title: 'Backend & Cloud',
-    skills: [
-      { name: 'Node.js', level: 90 },
-      { name: 'Express', level: 90 },
-      { name: 'AWS', level: 85 },
-      { name: 'Docker', level: 85 },
-    ]
-  },
-  {
-    icon: Users,
-    title: 'Tools & More',
-    skills: [
-      { name: 'Git', level: 95 },
-      { name: 'PostgreSQL', level: 85 },
-      { name: 'MongoDB', level: 80 },
-      { name: 'CI/CD', level: 85 },
-    ]
-  },
-]
-
-function AnimatedCounter({ end, suffix = '', duration = 2 }: { end: number, suffix?: string, duration?: number }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-  useEffect(() => {
-    if (isInView) {
-      let startTime: number | null = null
-      const animate = (currentTime: number) => {
-        if (!startTime) startTime = currentTime
-        const progress = Math.min((currentTime - startTime) / (duration * 1000), 1)
-
-        setCount(Math.floor(progress * end))
-
-        if (progress < 1) {
-          requestAnimationFrame(animate)
-        }
-      }
-      requestAnimationFrame(animate)
-    }
-  }, [isInView, end, duration])
-
-  return <span ref={ref}>{count}{suffix}</span>
-}
+import { useRef } from 'react'
 
 export default function About() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    },
+  }
+
   return (
-    <section id="about" className="section-padding">
-      <div className="container-custom">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              About <span className="text-gradient">Me</span>
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Passionate about building exceptional digital experiences and solving complex technical challenges
-            </p>
-          </div>
+    <section
+      id="about"
+      className="section-spacing px-6 lg:px-0 lg:pl-[120px] lg:pr-[clamp(1.5rem,5vw,6rem)]"
+    >
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        className="max-w-4xl"
+      >
+        {/* Section Header */}
+        <motion.div variants={itemVariants} className="section-header">
+          <span className="section-title">About</span>
+          <span className="section-number">01</span>
+        </motion.div>
 
-          {/* Bento Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {/* Stats Cards */}
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ delay: index * 0.1 }}
-                className="glass glass-hover rounded-2xl p-6 text-center group hover:scale-105 transition-transform"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Bio Section */}
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Left Column - Large Initials / Visual */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.4 }}
-            className="glass glass-hover rounded-2xl p-8 mb-16"
+            variants={itemVariants}
+            className="lg:col-span-4 flex items-start"
           >
-            <h3 className="text-2xl font-bold mb-4 text-gradient">My Journey</h3>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>
-                I'm a <span className="text-accent-cyan font-semibold">Senior Software Engineer</span> with a first-class honours degree
-                from Queen's University Belfast. With over 4 years of professional experience, I've delivered robust solutions across
-                diverse industries including healthcare, fintech, and enterprise software.
-              </p>
-              <p>
-                My expertise spans the full stack, from crafting intuitive user interfaces with <span className="text-accent-cyan">React</span> and
-                <span className="text-accent-cyan"> TypeScript</span> to building scalable backend systems with <span className="text-accent-cyan">Node.js</span> and
-                <span className="text-accent-cyan"> Java Spring Boot</span>. I'm particularly passionate about cloud architecture,
-                microservices, and DevOps practices that enable teams to ship faster and more reliably.
-              </p>
-              <p>
-                Beyond coding, I believe in continuous learning and knowledge sharing. I stay current with emerging technologies
-                and enjoy mentoring junior developers to help them grow their skills and confidence.
-              </p>
+            <div className="relative">
+              <span
+                className="font-serif text-[12rem] lg:text-[16rem] leading-none
+                           text-paper-warm dark:text-ink-dark select-none"
+                aria-hidden="true"
+              >
+                CW
+              </span>
+              {/* Accent mark */}
+              <div className="absolute bottom-8 right-0 w-16 h-1 bg-accent" />
             </div>
           </motion.div>
 
-          {/* Skills Grid */}
-          <div>
-            <h3 className="text-3xl font-bold mb-8 text-center">
-              Technical <span className="text-gradient">Expertise</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {skillCategories.map((category, categoryIndex) => (
-                <motion.div
-                  key={category.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ delay: 0.6 + categoryIndex * 0.1 }}
-                  className="glass glass-hover rounded-2xl p-6"
-                >
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2 bg-accent-cyan/10 rounded-lg">
-                      <category.icon className="text-accent-cyan" size={24} />
-                    </div>
-                    <h4 className="text-lg font-semibold">{category.title}</h4>
-                  </div>
-                  <div className="space-y-4">
-                    {category.skills.map((skill) => (
-                      <div key={skill.name}>
-                        <div className="flex justify-between mb-2">
-                          <span className="text-sm text-gray-300">{skill.name}</span>
-                          <span className="text-sm text-accent-cyan font-medium">{skill.level}%</span>
-                        </div>
-                        <div className="h-2 bg-primary-light rounded-full overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                            transition={{ duration: 1, delay: 0.8 + categoryIndex * 0.1, ease: 'easeOut' }}
-                            className="h-full bg-gradient-to-r from-accent-cyan to-accent-blue rounded-full"
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+          {/* Right Column - Content */}
+          <div className="lg:col-span-8 space-y-8">
+            {/* Bio - Prose format */}
+            <motion.div variants={itemVariants} className="space-y-6">
+              <p className="text-body-lg text-ink-dark dark:text-paper-cream leading-relaxed">
+                I'm a software engineer with a first-class honours degree from Queen's University Belfast.
+                Since 2017, I've been building things for the web—starting with curiosity, now with conviction.
+              </p>
+
+              <p className="text-body text-ink-medium dark:text-paper-mid leading-relaxed">
+                Currently at <span className="text-ink-dark dark:text-paper-cream font-medium">Unosquare</span>,
+                where I architect medical device software. Before that, payment systems at Payroc and
+                healthcare technology at Philips. Each role taught me that good engineering is less about
+                the code and more about the problems you choose to solve.
+              </p>
+
+              <p className="text-body text-ink-medium dark:text-paper-mid leading-relaxed">
+                I think in TypeScript and React. My backend work spans Node.js and Java Spring.
+                I've shipped to AWS, Railway, and bare metal. I care about developer experience
+                as much as user experience—because the two are more connected than most realize.
+              </p>
+            </motion.div>
+
+            {/* Beliefs - Short punchy statements */}
+            <motion.div
+              variants={itemVariants}
+              className="pt-8 border-t border-border-subtle dark:border-ink-medium/20"
+            >
+              <h3 className="text-label uppercase tracking-[0.15em] text-ink-light dark:text-paper-mid mb-6">
+                Beliefs
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  'Code should be readable first, clever second.',
+                  'Ship early, iterate often, listen always.',
+                  'Documentation is a feature, not an afterthought.',
+                  'The best architecture is the one you can explain in five minutes.',
+                ].map((belief, index) => (
+                  <motion.li
+                    key={index}
+                    variants={itemVariants}
+                    className="flex items-start gap-3"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 flex-shrink-0" />
+                    <span className="text-body text-ink-dark dark:text-paper-cream">
+                      {belief}
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Skills as flowing text, not badges */}
+            <motion.div
+              variants={itemVariants}
+              className="pt-8 border-t border-border-subtle dark:border-ink-medium/20"
+            >
+              <h3 className="text-label uppercase tracking-[0.15em] text-ink-light dark:text-paper-mid mb-6">
+                Tools I Use
+              </h3>
+              <p className="text-body text-ink-medium dark:text-paper-mid leading-relaxed">
+                <span className="text-ink-dark dark:text-paper-cream">Languages:</span> TypeScript, JavaScript, Java, Go
+                <span className="mx-2 text-ink-light dark:text-paper-mid/50">/</span>
+                <span className="text-ink-dark dark:text-paper-cream">Frontend:</span> React, React Native, Tailwind, Material-UI
+                <span className="mx-2 text-ink-light dark:text-paper-mid/50">/</span>
+                <span className="text-ink-dark dark:text-paper-cream">Backend:</span> Node.js, Express, Spring Boot
+                <span className="mx-2 text-ink-light dark:text-paper-mid/50">/</span>
+                <span className="text-ink-dark dark:text-paper-cream">Infrastructure:</span> AWS, Docker, PostgreSQL, MongoDB
+              </p>
+            </motion.div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   )
 }

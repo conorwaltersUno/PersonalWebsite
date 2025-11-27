@@ -1,150 +1,120 @@
 import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 
-const techStack = [
-  'React', 'React Native', 'JavaScript', 'TypeScript',
-  'Material-UI', 'Java Spring', 'Node.js', 'PostgreSQL',
-  'AWS', 'Jenkins', 'GitHub Actions', 'GoLang',
-  'Railway', 'SaaS', 'Docker'
-]
-
 export default function Hero() {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about')
+    if (aboutSection) {
+      const offset = 80
+      const elementPosition = aboutSection.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+    }
+  }
+
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        staggerChildren: 0.15,
+        delayChildren: 0.4,
+      },
+    },
   }
 
-  const itemVariants = {
+  const lineVariants = {
+    hidden: { y: '100%', opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  }
+
+  const fadeVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  }
-
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about')
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' })
-    }
+      transition: {
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Floating orbs for visual interest */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-accent-cyan/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-blue/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-purple/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
-
-      <div className="container-custom relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-center max-w-4xl mx-auto"
-        >
-          {/* Greeting */}
-          <motion.p
-            variants={itemVariants}
-            className="text-accent-cyan text-lg md:text-xl font-medium mb-4"
-          >
-            Hi, my name is
-          </motion.p>
-
-          {/* Name */}
+    <section
+      id="home"
+      className="min-h-screen flex flex-col justify-center relative
+                 px-6 lg:px-0 lg:pl-[120px] lg:pr-[clamp(1.5rem,5vw,6rem)]"
+    >
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-5xl"
+      >
+        {/* Main Name - Massive Typography */}
+        <div className="overflow-hidden mb-2">
           <motion.h1
-            variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
+            variants={lineVariants}
+            className="font-serif text-display-hero text-ink-black dark:text-paper-white"
           >
-            Conor Walters
+            Conor
           </motion.h1>
+        </div>
 
-          {/* Title with gradient */}
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-gradient mb-8"
+        <div className="overflow-hidden mb-8">
+          <motion.h1
+            variants={lineVariants}
+            className="font-serif text-display-hero text-ink-black dark:text-paper-white"
           >
-            Senior Software Engineer
-          </motion.h2>
+            Walters
+          </motion.h1>
+        </div>
 
-          {/* Description */}
-          <motion.p
-            variants={itemVariants}
-            className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
-          >
-            I architect scalable systems and lead technical solutions that drive business impact.
-            Specializing in full-stack development, cloud infrastructure, and building high-performance applications.
-          </motion.p>
+        {/* Role */}
+        <motion.p
+          variants={fadeVariants}
+          className="text-display-sub font-sans font-medium uppercase tracking-[0.15em]
+                     text-ink-medium dark:text-paper-mid"
+        >
+          Software Engineer
+        </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
-          >
-            <a
-              href="#projects"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className="group relative px-8 py-4 bg-gradient-to-r from-accent-cyan to-accent-blue rounded-lg font-semibold text-white overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent-cyan/50"
-            >
-              <span className="relative z-10">View My Work</span>
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            </a>
-
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className="group px-8 py-4 glass glass-hover rounded-lg font-semibold text-white transition-all hover:scale-105"
-            >
-              <span className="flex items-center justify-center gap-2">
-                Get In Touch
-              </span>
-            </a>
-          </motion.div>
-
-          {/* Tech Stack Pills */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap gap-3 justify-center"
-          >
-            {techStack.map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1 + index * 0.1 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="px-4 py-2 glass glass-hover rounded-full text-sm font-medium text-gray-300 cursor-default"
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>
+        {/* Brief intro - subtle, not overpowering */}
+        <motion.p
+          variants={fadeVariants}
+          className="mt-8 max-w-lg text-body-lg text-ink-light dark:text-paper-mid leading-relaxed"
+        >
+          Building for the web since 2020. Based in Northern Ireland, working globally.
+        </motion.p>
+      </motion.div>
 
       {/* Scroll Indicator */}
       <motion.button
         onClick={scrollToAbout}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: 'reverse' }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-accent-cyan hover:text-accent-blue transition-colors cursor-pointer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.6 }}
+        className="absolute bottom-12 left-6 lg:left-[120px]
+                   flex items-center gap-3 text-ink-light dark:text-paper-mid
+                   hover:text-accent transition-colors group"
         aria-label="Scroll to about section"
       >
-        <ArrowDown size={32} />
+        <span className="text-label uppercase tracking-[0.15em]">Scroll</span>
+        <motion.span
+          animate={{ y: [0, 4, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <ArrowDown size={16} strokeWidth={1.5} />
+        </motion.span>
       </motion.button>
     </section>
   )

@@ -1,265 +1,186 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import { Github, ExternalLink, Folder } from 'lucide-react'
-
-type ProjectCategory = 'all' | 'frontend' | 'fullstack' | 'mobile'
+import { useRef } from 'react'
+import { ArrowUpRight } from 'lucide-react'
 
 interface Project {
   title: string
   description: string
-  longDescription: string
   tech: string[]
-  github?: string
-  demo?: string
-  category: ProjectCategory
-  featured?: boolean
+  url?: string
+  size: 'large' | 'medium' | 'small'
 }
 
 const projects: Project[] = [
   {
     title: 'East Down Yacht Club',
-    description: 'Enterprise-grade sailing club management platform with membership and event systems.',
-    longDescription: 'Comprehensive full-stack platform serving a sailing community with advanced membership management, dynamic event coordination, real-time race results tracking, and integrated news distribution. Features sophisticated email integration for personalized newsletters and direct member communication. Architected with hybrid cloud infrastructure leveraging AWS for scalability and Railway for optimized deployment.',
+    description: 'Full-stack platform for sailing club management. Membership systems, event coordination, race results, and newsletter distribution. Built for scale with hybrid cloud infrastructure.',
     tech: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Railway'],
-    demo: 'https://edyc.nc-web-solutions.com/',
-    category: 'fullstack',
-    featured: true
+    url: 'https://edyc.nc-web-solutions.com/',
+    size: 'large',
   },
   {
     title: 'Strangford Lough Regattas',
-    description: 'Dynamic content management system for sailing event coordination and documentation.',
-    longDescription: 'Full-stack web application enabling real-time event management for the Strangford Lough sailing community. Features an intuitive admin dashboard for content control, document management system for event materials, and live updates for race schedules and results. Built with a modern cloud infrastructure combining AWS and Railway for reliable, scalable hosting.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Railway'],
-    demo: 'https://slrc.nc-web-solutions.com/',
-    category: 'fullstack',
-    featured: true
+    description: 'Event management platform for the sailing community. Real-time race schedules, document management, and admin dashboard for content control.',
+    tech: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
+    url: 'https://slrc.nc-web-solutions.com/',
+    size: 'large',
   },
   {
     title: 'NC Web Solutions',
-    description: 'Professional landing page showcasing collaborative web development services.',
-    longDescription: 'Modern, responsive landing page designed to showcase web development projects and services. Built as a collaborative platform to highlight technical expertise and project portfolio. Optimized for performance and deployed using Railway cloud platform for fast, reliable hosting.',
+    description: 'Professional services showcase. Collaborative platform highlighting web development projects and technical expertise.',
     tech: ['React', 'Railway'],
-    demo: 'https://nc-web-solutions.com/',
-    category: 'frontend',
-    featured: true
+    url: 'https://nc-web-solutions.com/',
+    size: 'medium',
   },
   {
-    title: 'Personal Portfolio Website',
-    description: 'Modern portfolio showcasing technical skills and professional experience.',
-    longDescription: 'Professional portfolio website built with React and styled using Tailwind CSS, demonstrating proficiency in modern frontend development. Hosted on Firebase platform with optimized performance and responsive design across all devices. Features smooth animations and an intuitive user experience.',
-    tech: ['React', 'Firebase', 'Tailwind CSS'],
-    demo: 'https://personal-cv-90a61.web.app/',
-    category: 'frontend'
+    title: 'This Portfolio',
+    description: 'The site you\'re looking at.',
+    tech: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'],
+    size: 'small',
   },
-]
-
-const categories = [
-  { id: 'all' as const, label: 'All Projects' },
-  { id: 'fullstack' as const, label: 'Full Stack' },
-  { id: 'frontend' as const, label: 'Frontend' },
 ]
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all')
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
-  const filteredProjects = activeCategory === 'all'
-    ? projects
-    : projects.filter(p => p.category === activeCategory)
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  }
 
-  const featuredProjects = projects.filter(p => p.featured)
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    },
+  }
 
   return (
-    <section id="projects" className="section-padding">
-      <div className="container-custom">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Featured <span className="text-gradient">Projects</span>
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              A selection of projects showcasing my technical skills and problem-solving abilities
-            </p>
-          </div>
+    <section
+      id="projects"
+      className="section-spacing px-6 lg:px-0 lg:pl-[120px] lg:pr-[clamp(1.5rem,5vw,6rem)]"
+    >
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        className="max-w-5xl"
+      >
+        {/* Section Header */}
+        <motion.div variants={itemVariants} className="section-header">
+          <span className="section-title">Work</span>
+          <span className="section-number">03</span>
+        </motion.div>
 
-          {/* Featured Projects */}
-          <div className="space-y-12 mb-20">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                transition={{ delay: index * 0.2 }}
-                className={`glass glass-hover rounded-2xl p-8 md:p-10 group hover:scale-[1.02] transition-all ${
-                  index % 2 === 0 ? 'md:ml-0 md:mr-auto' : 'md:ml-auto md:mr-0'
-                } max-w-5xl`}
-              >
-                <div className="flex flex-col md:flex-row gap-8">
-                  {/* Icon */}
-                  <div className="flex-shrink-0">
-                    <div className="p-4 bg-accent-cyan/10 rounded-xl group-hover:bg-accent-cyan/20 transition-colors">
-                      <Folder className="text-accent-cyan" size={48} />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-accent-cyan transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                      {project.longDescription}
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-accent-cyan/10 text-accent-cyan text-sm rounded-full border border-accent-cyan/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex gap-4">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-400 hover:text-accent-cyan transition-colors"
-                        >
-                          <Github size={20} />
-                          <span>Code</span>
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-400 hover:text-accent-cyan transition-colors"
-                        >
-                          <ExternalLink size={20} />
-                          <span>Live Demo</span>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* All Projects Section */}
-          <div>
-            <h3 className="text-3xl font-bold mb-8 text-center">
-              All <span className="text-gradient">Projects</span>
-            </h3>
-
-            {/* Filter Tabs */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all ${
-                    activeCategory === category.id
-                      ? 'bg-gradient-to-r from-accent-cyan to-accent-blue text-white shadow-lg shadow-accent-cyan/30'
-                      : 'glass glass-hover text-gray-400'
-                  }`}
-                >
-                  {category.label}
-                </button>
+        {/* Projects - Variable Layout */}
+        <div className="space-y-8">
+          {/* Large Projects - Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {projects
+              .filter((p) => p.size === 'large')
+              .map((project) => (
+                <ProjectCard key={project.title} project={project} variants={itemVariants} />
               ))}
-            </div>
+          </div>
 
-            {/* Projects Grid */}
-            <motion.div
-              layout
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.title}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="glass glass-hover rounded-2xl p-6 group hover:scale-105 transition-all"
-                >
-                  {/* Icon */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 bg-accent-cyan/10 rounded-lg">
-                      <Folder className="text-accent-cyan" size={32} />
-                    </div>
-                    <div className="flex gap-2">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-400 hover:text-accent-cyan transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <Github size={20} />
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-400 hover:text-accent-cyan transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <ExternalLink size={20} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Title & Description */}
-                  <h4 className="text-xl font-bold mb-2 group-hover:text-accent-cyan transition-colors">
-                    {project.title}
-                  </h4>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-accent-cyan text-xs"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.tech.length > 4 && (
-                      <span className="text-gray-500 text-xs">
-                        +{project.tech.length - 4}
-                      </span>
-                    )}
-                  </div>
+          {/* Medium & Small Projects */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {projects
+              .filter((p) => p.size === 'medium')
+              .map((project) => (
+                <motion.div key={project.title} variants={itemVariants} className="lg:col-span-2">
+                  <ProjectCard project={project} variants={itemVariants} />
                 </motion.div>
               ))}
-            </motion.div>
+            {projects
+              .filter((p) => p.size === 'small')
+              .map((project) => (
+                <motion.div key={project.title} variants={itemVariants} className="lg:col-span-1">
+                  <ProjectCard project={project} variants={itemVariants} />
+                </motion.div>
+              ))}
           </div>
-        </motion.div>
-      </div>
+        </div>
+
+        {/* Subtle note */}
+        <motion.p
+          variants={itemVariants}
+          className="mt-12 text-caption text-ink-light dark:text-paper-mid/70"
+        >
+          Selected work. More projects and contributions on{' '}
+          <a
+            href="https://github.com/conorwaltersUno"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink-dark dark:text-paper-cream hover:text-accent transition-colors link-underline"
+          >
+            GitHub
+          </a>
+          .
+        </motion.p>
+      </motion.div>
     </section>
+  )
+}
+
+interface ProjectCardProps {
+  project: Project
+  variants: typeof import('framer-motion').Variants
+}
+
+function ProjectCard({ project }: ProjectCardProps) {
+  const CardWrapper = project.url ? 'a' : 'div'
+  const cardProps = project.url
+    ? {
+        href: project.url,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      }
+    : {}
+
+  return (
+    <CardWrapper
+      {...cardProps}
+      className={`block p-6 lg:p-8 border border-border-visible dark:border-ink-medium/20
+                 bg-surface-elevated dark:bg-ink-dark
+                 transition-all duration-200 group
+                 ${project.url ? 'hover:-translate-y-0.5 hover:shadow-lg hover:border-accent/30 cursor-pointer' : ''}`}
+    >
+      {/* Header */}
+      <div className="flex items-start justify-between mb-4">
+        <h3 className="text-heading-2 font-serif text-ink-black dark:text-paper-white
+                       group-hover:text-accent transition-colors">
+          {project.title}
+        </h3>
+        {project.url && (
+          <ArrowUpRight
+            size={20}
+            className="text-ink-light dark:text-paper-mid group-hover:text-accent
+                       transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5
+                       transition-all flex-shrink-0 ml-4"
+          />
+        )}
+      </div>
+
+      {/* Description */}
+      <p className="text-body text-ink-medium dark:text-paper-mid mb-6 leading-relaxed">
+        {project.description}
+      </p>
+
+      {/* Tech - Simple slash-separated */}
+      <p className="text-caption text-ink-light dark:text-paper-mid/70">
+        {project.tech.join(' / ')}
+      </p>
+    </CardWrapper>
   )
 }
