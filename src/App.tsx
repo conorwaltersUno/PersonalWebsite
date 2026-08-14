@@ -63,12 +63,9 @@ function App() {
       {/* Footer - Minimal */}
       <footer className="main-content border-t border-border-subtle dark:border-ink-medium/20">
         <div className="px-6 lg:px-0 lg:pl-[120px] lg:pr-[clamp(1.5rem,5vw,6rem)] py-12">
-          <div className="max-w-4xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div className="max-w-4xl">
             <p className="text-caption text-ink-light dark:text-paper-mid/70">
               © {new Date().getFullYear()} Conor Walters
-            </p>
-            <p className="text-caption text-ink-light/50 dark:text-paper-mid/50">
-              Built with intention, not templates.
             </p>
           </div>
         </div>
