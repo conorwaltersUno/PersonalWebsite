@@ -81,6 +81,23 @@ export default function Contact() {
             </a>
           </motion.div>
 
+          {/* CV Download - Prominent */}
+          <motion.div variants={itemVariants}>
+            <a
+              href="/Conor-Walters-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 text-heading-2 font-serif
+                         text-ink-medium dark:text-paper-mid hover:text-accent transition-colors"
+            >
+              <span className="link-underline">Download CV</span>
+              <ArrowUpRight
+                size={20}
+                className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+              />
+            </a>
+          </motion.div>
+
           {/* Divider */}
           <motion.div
             variants={itemVariants}
@@ -103,14 +120,6 @@ export default function Contact() {
                 className="text-body text-ink-medium dark:text-paper-mid hover:text-accent transition-colors link-underline"
               >
                 GitHub
-              </a>
-              <a
-                href="/Conor-Walters-Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-body text-ink-medium dark:text-paper-mid hover:text-accent transition-colors link-underline"
-              >
-                Resume (PDF)
               </a>
             </div>
           </motion.div>
