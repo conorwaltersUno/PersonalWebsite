@@ -160,17 +160,18 @@ export default function Navigation({ isDark, toggleTheme }: NavigationProps) {
           </button>
 
           {/* Social Links */}
-          <div className="flex flex-col items-center py-4 gap-4">
+          <div className="flex flex-col items-center py-4 gap-3 pb-6">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-ink-light dark:text-paper-mid hover:text-accent transition-colors"
+                className="p-2 text-ink-light dark:text-paper-mid hover:text-accent transition-colors
+                           hover:bg-paper-cream dark:hover:bg-ink-dark rounded-md"
                 aria-label={social.label}
               >
-                <social.icon size={18} />
+                <social.icon size={18} strokeWidth={1.5} />
               </a>
             ))}
           </div>

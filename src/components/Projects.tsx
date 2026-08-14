@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, type Variant } from 'framer-motion'
 import { useRef } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 
@@ -135,7 +135,7 @@ export default function Projects() {
 
 interface ProjectCardProps {
   project: Project
-  variants: typeof import('framer-motion').Variants
+  variants: Record<string, Variant>
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
